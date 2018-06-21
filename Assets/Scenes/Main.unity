@@ -357,11 +357,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114944624068723948, guid: 87bb10e7691b014428758af4f3811c34,
+    - target: {fileID: 114891049606312628, guid: 87bb10e7691b014428758af4f3811c34,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: playerName
+      value: 
+      objectReference: {fileID: 534734120}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87bb10e7691b014428758af4f3811c34, type: 2}
   m_IsPrefabParent: 0
@@ -459,7 +459,7 @@ RectTransform:
   m_GameObject: {fileID: 1602001090}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2000005, z: 1.2000005}
+  m_LocalScale: {x: 1.2, y: 1.2000015, z: 1.2000015}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -508,15 +508,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1086216267371440, guid: 85c065fcf1af7714faf35fce25d776b3, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114723072303909434, guid: 85c065fcf1af7714faf35fce25d776b3,
+    - target: {fileID: 114488835726883258, guid: 85c065fcf1af7714faf35fce25d776b3,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: playerName
+      value: 
+      objectReference: {fileID: 534734120}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85c065fcf1af7714faf35fce25d776b3, type: 2}
   m_IsPrefabParent: 0
@@ -626,3 +622,44 @@ Transform:
   m_PrefabParentObject: {fileID: 4583533464741572, guid: 85c065fcf1af7714faf35fce25d776b3,
     type: 2}
   m_PrefabInternal: {fileID: 1674162213}
+--- !u!1 &2022623297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2022623299}
+  - component: {fileID: 2022623298}
+  m_Layer: 0
+  m_Name: RayController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2022623298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022623297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996af7c8f9bacac4d8088a8cc1cf8aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 1684839332}
+--- !u!4 &2022623299
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022623297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

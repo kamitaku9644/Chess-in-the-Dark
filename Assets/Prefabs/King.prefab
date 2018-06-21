@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23365293793183624}
   - component: {fileID: 136306974040181614}
   - component: {fileID: 65854178420013916}
+  - component: {fileID: 114891049606312628}
   m_Layer: 0
   m_Name: King
   m_TagString: Player1
@@ -273,6 +274,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114891049606312628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010072715351594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4046c9b19ce954d96e430b50a19bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
+    type: 2}
+  playerName: {fileID: 0}
+  selectableList: []
 --- !u!114 &114944624068723948
 MonoBehaviour:
   m_ObjectHideFlags: 1

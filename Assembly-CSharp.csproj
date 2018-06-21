@@ -59,14 +59,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DiagonalMovable.cs" />
+    <Compile Include="Assets\Scripts\ArcherController.cs" />
+    <Compile Include="Assets\Scripts\BishopController.cs" />
     <Compile Include="Assets\Scripts\DiveMouseLook.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\KingController.cs" />
-    <Compile Include="Assets\Scripts\KnightMovable.cs" />
+    <Compile Include="Assets\Scripts\KnghtController.cs" />
     <Compile Include="Assets\Scripts\MoveController.cs" />
-    <Compile Include="Assets\Scripts\QueueMovable.cs" />
-    <Compile Include="Assets\Scripts\RowMovable.cs" />
+    <Compile Include="Assets\Scripts\QueenController.cs" />
+    <Compile Include="Assets\Scripts\RayController.cs" />
+    <Compile Include="Assets\Scripts\RookController.cs" />
+    <Compile Include="Assets\Scripts\SwordmanController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kamit/Desktop/unity-projects/ChessinTheDark/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

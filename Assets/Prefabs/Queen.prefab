@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23640333706109082}
   - component: {fileID: 136712975446953966}
   - component: {fileID: 65173530568980836}
+  - component: {fileID: 114488835726883258}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Player1
@@ -48,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1444213866676382
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +226,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114488835726883258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081298239423050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd8423234d62a04181cfc3fba3962e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
+    type: 2}
+  playerName: {fileID: 0}
+  selectableList: []
 --- !u!114 &114582060957343394
 MonoBehaviour:
   m_ObjectHideFlags: 1

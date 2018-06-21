@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class KingController : MoveController,IMovable {
 
-    readonly QueueMovable queueMovable = new QueueMovable();
-    readonly RowMovable rowMovable = new RowMovable();
-    readonly DiagonalMovable diagonalMovable = new DiagonalMovable();
+    public new void Movable()
+        {
+        GetPlayerProperty(this.gameObject, 1, 1, 1, 1, 1);
+        GetQueue(selectedPlayer.transform.localPosition.z);
+        GetRow(selectedPlayer.transform.localPosition.x);
+
+        base.Movable();
+        }
     
-    public void Movable()
-    {
-        GetPlayerProperty(1, 1, 1, 1, 1);
-        GetQueue(selectedPlayer.transform.localPosition.x);
-        GetRow(selectedPlayer.transform.localPosition.z);
-
-        queueMovable.Movable();
-        rowMovable.Movable();
-        diagonalMovable.Movable();
-    }
-
     
 
 }
