@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightMovable : MoveController {
+public class KnightMovable : MoveController,IMovable {
 
-    protected  override void Movable()
+    public  void Movable()
     {
         var parent = playerName.transform;
         int i = nowSquareQueue;

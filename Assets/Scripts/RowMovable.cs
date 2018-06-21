@@ -5,7 +5,7 @@ using UnityEngine;
 public class RowMovable : MoveController {
 
     //行移動
-    protected override void Movable()
+    public void Movable()
     {
         int i;
         bool rowCheck;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class QueueMovable : MoveController {
 
     //列移動
-    protected override void Movable()
+    public void Movable()
     {
 
         int i;

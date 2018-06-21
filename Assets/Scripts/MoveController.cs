@@ -29,7 +29,7 @@ public class MoveController : MonoBehaviour {
 
 
 
-    void GetPlayerProperty(int b, int f, int r, int l, int d)
+    protected void GetPlayerProperty(int b, int f, int r, int l, int d)
     {
         selectedPlayer = this.gameObject;
         back = b;
@@ -41,7 +41,7 @@ public class MoveController : MonoBehaviour {
     
     
     //列取得
-    void GetQueue(float playerpositionx)
+    protected void GetQueue(float playerpositionx)
     {
         float a;
         int b;
@@ -54,7 +54,7 @@ public class MoveController : MonoBehaviour {
     }
 
     //行取得
-    void GetRow(float playerpositionz)
+    protected void GetRow(float playerpositionz)
     {
         float c;
         int d;
@@ -68,7 +68,7 @@ public class MoveController : MonoBehaviour {
 
 
 
-    protected virtual void Movable() { }
+    
 
 
 }

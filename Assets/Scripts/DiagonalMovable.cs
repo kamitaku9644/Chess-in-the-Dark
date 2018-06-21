@@ -5,7 +5,7 @@ using UnityEngine;
 public class DiagonalMovable : MoveController {
 
     //斜め移動
-    protected override void Movable()
+    public void Movable()
     {
         int i;
         int ii;
