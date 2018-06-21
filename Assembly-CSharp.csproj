@@ -28,7 +28,6 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,7 +37,6 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -61,8 +59,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DiagonalMovable.cs" />
     <Compile Include="Assets\Scripts\DiveMouseLook.cs" />
-    <Compile Include="Assets\Scripts\GetPosition.cs" />
+    <Compile Include="Assets\Scripts\Interfaces.cs" />
+    <Compile Include="Assets\Scripts\KnightMovable.cs" />
+    <Compile Include="Assets\Scripts\MoveController.cs" />
+    <Compile Include="Assets\Scripts\QueueMovable.cs" />
+    <Compile Include="Assets\Scripts\RowMovable.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kamit/Desktop/unity-projects/ChessinTheDark/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
