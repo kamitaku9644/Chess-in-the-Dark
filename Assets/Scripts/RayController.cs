@@ -6,11 +6,12 @@ public class RayController : MonoBehaviour{
 
     public GameObject MainCamera;
 
-    
+    GameObject hittedPlayer;
+    bool playerHited;
 
 	// Use this for initialization
 	void Start () {
-		
+        playerHited = false;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +21,16 @@ public class RayController : MonoBehaviour{
 
         if(Physics.Raycast(ray, out hit))
         {
-            hit.collider.gameObject.GetComponent<IMovable>().Movable();
+            if (!playerHited)
+            {
+                hittedPlayer = hit.collider.gameObject;
+                hittedPlayer.GetComponent<IMovable>().Movable();
+                playerHited = true;
+            }
+        }else if(playerHited)
+        {
+            hittedPlayer.GetComponent<IMovable>().SSinit();
+            playerHited = false;
         }
 	}
 }

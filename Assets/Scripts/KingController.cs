@@ -11,7 +11,16 @@ public class KingController : MoveController,IMovable {
         GetRow(selectedPlayer.transform.localPosition.x);
 
         base.Movable();
+        
         }
+
+    public void SSinit() {
+        foreach (GameObject ss in selectableList)
+        {
+            Destroy(ss);
+            
+        }
+    }
     
     
 

@@ -12,4 +12,11 @@ public class SwordmanController : MoveController,IMovable {
 
         base.Movable();
     }
+    public void SSinit()
+    {
+        foreach (GameObject ss in selectableList)
+        {
+            Destroy(ss);
+        }
+    }
 }

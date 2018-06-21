@@ -23,6 +23,7 @@ public class MoveController : MonoBehaviour {
 
 
     public List<GameObject> selectableList = new List<GameObject>();
+   
 
     protected readonly float[] queue = new float[12];
     protected readonly float[] row = new float[12];

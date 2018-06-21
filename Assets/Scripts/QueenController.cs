@@ -12,4 +12,11 @@ public class QueenController : MoveController,IMovable {
 
         base.Movable();
     }
+    public void SSinit()
+    {
+        foreach (GameObject ss in selectableList)
+        {
+            Destroy(ss);
+        }
+    }
 }
