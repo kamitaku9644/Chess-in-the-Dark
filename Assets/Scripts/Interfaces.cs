@@ -6,3 +6,10 @@ interface IMovable {
     void Movable();
     void SSinit();
 }
+
+interface ILoading
+{
+    void Loading();
+    bool LoadComp();
+    void Loadinit();
+}

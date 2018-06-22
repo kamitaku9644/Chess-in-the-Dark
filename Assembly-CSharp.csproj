@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\KingController.cs" />
     <Compile Include="Assets\Scripts\KnghtController.cs" />
+    <Compile Include="Assets\Scripts\Load.cs" />
     <Compile Include="Assets\Scripts\MoveController.cs" />
     <Compile Include="Assets\Scripts\QueenController.cs" />
     <Compile Include="Assets\Scripts\RayController.cs" />

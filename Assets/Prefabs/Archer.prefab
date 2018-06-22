@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 223637927331630772}
   - component: {fileID: 114437571879320030}
   - component: {fileID: 114038507585894242}
+  - component: {fileID: 114912204005180350}
   m_Layer: 5
   m_Name: 'Loading '
   m_TagString: Untagged
@@ -238,7 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectableSquare: {fileID: 0}
-  playerName: {fileID: 0}
   selectableList: []
 --- !u!114 &114437571879320030
 MonoBehaviour:
@@ -306,6 +306,18 @@ MonoBehaviour:
   m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114912204005180350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050241043776212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ebc345a9152bf44998d29d39a43d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadTimerate: 0.7
 --- !u!124 &124598261363553866
 Behaviour:
   m_ObjectHideFlags: 1
