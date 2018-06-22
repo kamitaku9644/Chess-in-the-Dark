@@ -13,3 +13,8 @@ interface ILoading
     bool LoadComp();
     void Loadinit();
 }
+
+interface IMove
+{
+    void Move(GameObject hittedSquare);
+}

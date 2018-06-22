@@ -9,6 +9,7 @@ public class RayController : MonoBehaviour
     public GameObject MainCamera;
 
     GameObject hittedPlayer;
+
     GameObject hesHittedPlayer;
     ILoading playerLoad;
 
@@ -16,7 +17,6 @@ public class RayController : MonoBehaviour
     ILoading squareLoad;
 
     bool playerSelected;
-    bool playerCanceled;
     bool squareSelected;
 
     // Use this for initialization
@@ -87,11 +87,12 @@ public class RayController : MonoBehaviour
                         if (playerLoad.LoadComp()) {
                             hittedPlayer.GetComponent<IMovable>().SSinit();
                             hittedPlayer = null;
-                            playerSelected = false;                            
+                            playerSelected = false;                                                             
                         }
 
                     }
                 }
+
 
                 //square select
                 if (hit.collider.gameObject.tag == "SelectableSquare")
@@ -104,7 +105,10 @@ public class RayController : MonoBehaviour
                     else
                     {
                         squareLoad.Loading();
-                        if (squareLoad.LoadComp()) { squareSelected = true; }
+                        if (squareLoad.LoadComp()) {
+                            hittedPlayer.GetComponentInChildren<IMove>().Move(hittedSquare);
+                            squareSelected = true;
+                        }
                     }
 
                 }

@@ -213,6 +213,24 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224936551758779862, guid: 28a6bb9aba89ead45a77bef8484aac36,
     type: 2}
   m_PrefabInternal: {fileID: 1169600900}
+--- !u!1 &838108815 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1010072715351594, guid: 87bb10e7691b014428758af4f3811c34,
+    type: 2}
+  m_PrefabInternal: {fileID: 1195171594}
+--- !u!114 &838108816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838108815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1684839332}
+  playerCamera: {fileID: 1713341759}
 --- !u!1001 &1169600900
 Prefab:
   m_ObjectHideFlags: 0
@@ -355,6 +373,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4020178399531694, guid: 87bb10e7691b014428758af4f3811c34, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65854178420013916, guid: 87bb10e7691b014428758af4f3811c34,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -607,6 +630,11 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!1 &1713341759 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1015994050288534, guid: 87bb10e7691b014428758af4f3811c34,
+    type: 2}
+  m_PrefabInternal: {fileID: 1195171594}
 --- !u!4 &1971497995 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4583533464741572, guid: 85c065fcf1af7714faf35fce25d776b3,
