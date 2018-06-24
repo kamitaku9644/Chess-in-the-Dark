@@ -238,7 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae9f301ed4a5ad40843dd0ac7043111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableSquare: {fileID: 0}
+  selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
+    type: 2}
   selectableList: []
 --- !u!114 &114437571879320030
 MonoBehaviour:

@@ -72,6 +72,8 @@
     <Compile Include="Assets\Scripts\PlayerControllers\RookController.cs" />
     <Compile Include="Assets\Scripts\PlayerControllers\SwordmanController.cs" />
     <Compile Include="Assets\Scripts\RayController.cs" />
+    <Compile Include="Assets\Scripts\SelectGameManager.cs" />
+    <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kamit/Desktop/unity-projects/ChessinTheDark/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
