@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RayController : GameManager
+public class RayController : SelectGameManeger
 {
     
     enum SelectState { playerSelect, squareSelect };
     SelectState selectState;
-    public GameObject mainCamera;
+    
 
     bool rayhitted;
     GameObject hittedObj;
 
-    GameObject hittedPlayer;
+    
 
     GameObject hesHittedPlayer;
     ILoading playerLoad;
 
-    GameObject hittedSquare;
+    
     ILoading squareLoad;
 
     void Start()
@@ -99,9 +99,8 @@ public class RayController : GameManager
                             squareLoad.Loading();
                             if (squareLoad.LoadComp())
                             {
-                                hittedPlayer.GetComponentInChildren<IMove>().Move(hittedSquare);
-                                //call move
-                                print("called move");
+                                gameState = GameState.move;
+                                print(gameState);
                             }
                         }
                     }
