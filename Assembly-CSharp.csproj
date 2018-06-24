@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DiveMouseLook.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\Load.cs" />
     <Compile Include="Assets\Scripts\MovableController.cs" />
@@ -72,8 +73,6 @@
     <Compile Include="Assets\Scripts\PlayerControllers\RookController.cs" />
     <Compile Include="Assets\Scripts\PlayerControllers\SwordmanController.cs" />
     <Compile Include="Assets\Scripts\RayController.cs" />
-    <Compile Include="Assets\Scripts\SelectGameManager.cs" />
-    <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kamit/Desktop/unity-projects/ChessinTheDark/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
