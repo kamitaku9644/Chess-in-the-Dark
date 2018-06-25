@@ -3,15 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    public enum GameState { start,select,move,search,interval,result}
-    public GameState gameState;
+    public enum GameState { start, select, move, search, interval, result }
+    GameState gameState;
+    public GameState PGameState
+    {
+        set { gameState = value; }
+    }
 
-    public GameObject selectGM;
-    protected GameObject hittedPlayer;
-    protected GameObject hittedSquare;
-    public GameObject mainCamera;
+    bool moveComp;
 
-    public bool moveComp;
+    public bool MoveComp
+    {
+        private get { return moveComp; }
+        set { moveComp = value; }
+    }
+
+   
+    public GameObject selectGM;     
+    
+
+    RayController rayController;
+
+    
 
     // Use this for initialization
     void Start () {
@@ -27,14 +40,14 @@ public class GameManager : MonoBehaviour {
                 selectGM.SetActive(true);
 
                 break;
-
+                
 
             case GameState.move:
-                print(hittedPlayer.name);
-                print(hittedSquare.name);
+                print(rayController.HittedPlayer.name);
+                print(rayController.HittedSquare.name);
                 moveComp = false;
                 selectGM.SetActive(false);
-                hittedPlayer.GetComponentInChildren<IMove>().Move(hittedSquare);
+                rayController.HittedPlayer.GetComponentInChildren<IMove>().Move(rayController.HittedSquare);
                 if (moveComp) { gameState = GameState.search; }
                 break;
 

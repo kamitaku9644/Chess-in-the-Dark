@@ -8,8 +8,23 @@ public class RayController : SelectGameManeger
     
     enum SelectState { playerSelect, squareSelect };
     SelectState selectState;
-    
 
+    GameObject hittedPlayer;
+
+    public GameObject HittedPlayer
+    {
+        get { return hittedPlayer; }
+        
+    }
+
+    GameObject hittedSquare;
+
+    public GameObject HittedSquare
+    {
+        get { return hittedSquare; }
+    }
+
+    public GameObject mainCamera;
     bool rayhitted;
     GameObject hittedObj;
 
@@ -21,14 +36,18 @@ public class RayController : SelectGameManeger
     
     ILoading squareLoad;
 
-    void Start()
+    void OnEnable()
     {
+        
         selectState = SelectState.playerSelect;
         rayhitted = false;
     }
 
     void Update()
     {
+
+
+        
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
         RaycastHit hit;
 
@@ -99,8 +118,7 @@ public class RayController : SelectGameManeger
                             squareLoad.Loading();
                             if (squareLoad.LoadComp())
                             {
-                                gameState = GameState.move;
-                                print(gameState);
+                                PGameState = GameState.move;
                             }
                         }
                     }

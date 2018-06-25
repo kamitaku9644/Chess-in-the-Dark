@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour,IMove {
     
-    public GameObject playerCamera;
-    GameManager gameManager = new GameManager();
+    GameObject playerCamera;
+    public GameObject PlayerCamera
+    {
+        get { return playerCamera; }
+    }
+
+
+    GameManager gameManager;
+    RayController rayController;
 
     bool look;
     Vector3 movePosition;
@@ -14,17 +21,17 @@ public class MoveController : MonoBehaviour,IMove {
     {
         playerCamera = this.gameObject.transform.GetChild(1).gameObject;
         movePosition = hittedSquare.transform.localPosition;
-        gameManager.mainCamera.SetActive(false);
+        rayController.mainCamera.SetActive(false);
         
         if (!look)
         {
             playerCamera.transform.LookAt(movePosition);
             look = true;
         }
-        playerCamera.SetActive(!gameManager.mainCamera.activeSelf);
+        playerCamera.SetActive(!rayController.mainCamera.activeSelf);
         this.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, movePosition, Time.deltaTime * 0.8f);
 
-        if(this.transform.localPosition == movePosition) { gameManager.moveComp = true; }
+        if(this.transform.localPosition == movePosition) { gameManager.MoveComp = true; }
         
     }
 }

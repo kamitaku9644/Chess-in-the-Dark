@@ -205,10 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b908dad2d16ac50439f42d7d942ad34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 0
   selectGM: {fileID: 174013447}
-  mainCamera: {fileID: 0}
-  moveComp: 0
+  rayCtl: {fileID: 531141219}
 --- !u!4 &174013449
 Transform:
   m_ObjectHideFlags: 0
@@ -311,10 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b08cab07924784b80e444d42423dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 0
   selectGM: {fileID: 174013447}
-  mainCamera: {fileID: 1684839332}
-  moveComp: 0
 --- !u!1 &531141219
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &531141220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,10 +337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996af7c8f9bacac4d8088a8cc1cf8aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 0
-  selectGM: {fileID: 0}
+  selectGM: {fileID: 174013447}
+  rayCtl: {fileID: 531141219}
   mainCamera: {fileID: 1684839332}
-  moveComp: 0
 --- !u!4 &531141221
 Transform:
   m_ObjectHideFlags: 0
@@ -410,7 +404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
 --- !u!1001 &908819224
 Prefab:
   m_ObjectHideFlags: 0
