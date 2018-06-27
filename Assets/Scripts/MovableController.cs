@@ -51,7 +51,7 @@ public class MovableController : MonoBehaviour {
         for (a = -5.5f, b = 0; -6 < a & a < 6; a++, b++)
         {
             queue[b] = a;
-            if (queue[b] == playerpositionz) { nowSquareQueue = b; }
+            if (a-1 < playerpositionz && playerpositionz <= a) { nowSquareQueue = b;}
         }
     }
 
@@ -64,7 +64,7 @@ public class MovableController : MonoBehaviour {
         for (c = -5.5f, d = 0; -6 < c & c < 6; c++, d++)
         {
             row[d] = c;
-            if (c == playerpositionx) { nowSquareRow = d; }
+            if (c-1 <playerpositionx && playerpositionx <= c) { nowSquareRow = d; }
         }
     }
 
@@ -208,6 +208,7 @@ public class MovableController : MonoBehaviour {
         int i;
         bool queueCheck;
         var parent = playerName.transform;
+        
 
         //後方への移動
         for (i = nowSquareQueue - 1, queueCheck = true; i >= nowSquareQueue - back; i--)
@@ -232,6 +233,7 @@ public class MovableController : MonoBehaviour {
         {
             if (0 <= i & i < 12)
             {
+                
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } }
                 if (!queueCheck) { break; }

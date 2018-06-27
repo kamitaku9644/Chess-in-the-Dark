@@ -20,4 +20,4 @@ interface IMove
     void Move();
 }
 
-public enum GameState { start, select, moverdy, move, search, interval, result }
+public enum GameState { start,initialize, select, moverdy, move, search, interval, result }

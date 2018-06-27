@@ -22,12 +22,12 @@ public class GameManager : MonoBehaviour {
    
     public GameObject selectGM;
     public GameObject rayCtl;
-
+    public GameObject initCtl;
     
 
     // Use this for initialization
     void Start () {
-        gameState = GameState.select;
+        gameState = GameState.initialize;
         selectGM.SetActive(false);
 	}
 	
@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour {
         print("GM:" +gameState);
         switch (gameState)
         {
+            case GameState.initialize:       
+                gameState = GameState.select;
+               
+                
+                break;
             case GameState.select:
                 selectGM.SetActive(true);
                 rayCtl.SetActive(true);
@@ -66,4 +71,8 @@ public class GameManager : MonoBehaviour {
 
         
 	}
+    private void LateUpdate()
+    {
+        if(gameState == GameState.initialize) { initCtl.GetComponentInChildren<InitializeController>().Player1Init(); }
+    }
 }
