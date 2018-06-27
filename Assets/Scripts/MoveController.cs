@@ -18,6 +18,7 @@ public class MoveController : MonoBehaviour,IMove {
 
     public void MoveRdy(GameObject hittedSquare)
     {
+        this.GetComponent<IMovable>().SSinit();
         playerCamera = this.gameObject.transform.GetChild(1).gameObject;
         movePosition = hittedSquare.transform.localPosition;
         mainCamera.SetActive(false);
