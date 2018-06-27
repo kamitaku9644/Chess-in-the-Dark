@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
         set { moveComp = value; }
     }
 
-   
+    public GameObject mainCamera;   
     public GameObject selectGM;
     public GameObject rayCtl;
     public GameObject initCtl;
@@ -30,9 +30,13 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.initialize;
         selectGM.SetActive(false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+   
+
+
+
+    // Update is called once per frame
+    void Update () {
         print("GM:" +gameState);
         switch (gameState)
         {
@@ -41,6 +45,12 @@ public class GameManager : MonoBehaviour {
                
                 
                 break;
+            case GameState.selectrdy:
+                RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
+                mainCamera.SetActive(true);
+                gameState = GameState.select;
+                break;
+
             case GameState.select:
                 selectGM.SetActive(true);
                 rayCtl.SetActive(true);
@@ -52,6 +62,7 @@ public class GameManager : MonoBehaviour {
                 moveComp = false;
                 selectGM.SetActive(false);
                 rayCtl.SetActive(false);
+                mainCamera.SetActive(false);
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
                 gameState = GameState.move;
                 break;
@@ -63,9 +74,11 @@ public class GameManager : MonoBehaviour {
 
             case GameState.search:
                 print("search");
+                gameState = GameState.selectrdy;
                 break;
             case GameState.interval:
                 print("interval");
+                gameState = GameState.selectrdy;
                 break;
         }
 

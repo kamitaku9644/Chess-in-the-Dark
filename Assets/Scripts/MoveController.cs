@@ -10,9 +10,9 @@ public class MoveController : MonoBehaviour,IMove {
         get { return playerCamera; }
     }
 
+    
 
-    public GameObject mainCamera;
-
+    GameObject maincamera;
     bool look;
     Vector3 movePosition;
 
@@ -21,7 +21,6 @@ public class MoveController : MonoBehaviour,IMove {
         this.GetComponent<IMovable>().SSinit();
         playerCamera = this.gameObject.transform.GetChild(1).gameObject;
         movePosition = hittedSquare.transform.localPosition;
-        mainCamera.SetActive(false);
         playerCamera.SetActive(true);
         playerCamera.transform.LookAt(this.gameObject.transform.parent.transform.TransformPoint(movePosition));
         
@@ -33,5 +32,9 @@ public class MoveController : MonoBehaviour,IMove {
 
         if (this.transform.localPosition == movePosition) { GameManager.MoveComp = true; }
 
+    }
+    public void Moveinit()
+    {
+        playerCamera.SetActive(false);
     }
 }

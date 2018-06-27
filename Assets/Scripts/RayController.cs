@@ -38,6 +38,9 @@ public class RayController : MonoBehaviour
 
     void OnEnable()
     {
+        hittedObj = null;
+        hittedPlayer = null;
+        hittedSquare = null;
 
         selectState = SelectState.playerSelect;
         rayhitted = false;

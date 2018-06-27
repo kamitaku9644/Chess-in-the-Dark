@@ -18,6 +18,7 @@ interface IMove
 {
     void MoveRdy(GameObject hittedSquare);
     void Move();
+    void Moveinit();
 }
 
-public enum GameState { start,initialize, select, moverdy, move, search, interval, result }
+public enum GameState { start,initialize, select, selectrdy, moverdy, move, search, interval, result }

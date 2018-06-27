@@ -210,9 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b908dad2d16ac50439f42d7d942ad34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1684839332}
   selectGM: {fileID: 174013447}
   rayCtl: {fileID: 531141219}
-  initCtl: {fileID: 0}
+  initCtl: {fileID: 589198450}
   timelimitUI: {fileID: 160948135}
 --- !u!4 &174013449
 Transform:
@@ -267,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b08cab07924784b80e444d42423dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1684839332}
   selectGM: {fileID: 174013447}
   rayCtl: {fileID: 531141219}
   initCtl: {fileID: 589198450}
@@ -428,6 +430,18 @@ Prefab:
     - target: {fileID: 4982090086946768, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702959943930556, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113907316287022, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
