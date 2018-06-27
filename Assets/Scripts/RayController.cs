@@ -183,7 +183,7 @@ public class RayController : MonoBehaviour
                 break;
 
             case GameState.moverdy:
-                this.gameObject.SetActive(mainCamera.activeSelf);
+                
                 break;
     }
 

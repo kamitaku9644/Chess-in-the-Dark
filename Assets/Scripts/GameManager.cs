@@ -21,9 +21,7 @@ public class GameManager : MonoBehaviour {
 
    
     public GameObject selectGM;
-
-
-    RayController rayController;
+    public GameObject rayCtl;
 
     
 
@@ -40,12 +38,15 @@ public class GameManager : MonoBehaviour {
         {
             case GameState.select:
                 selectGM.SetActive(true);
+                rayCtl.SetActive(true);
+
                 break;
                 
 
             case GameState.moverdy:
                 moveComp = false;
                 selectGM.SetActive(false);
+                rayCtl.SetActive(false);
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
                 gameState = GameState.move;
                 break;

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 136935364117537024}
   - component: {fileID: 65677674266516292}
   - component: {fileID: 114426310955407874}
+  - component: {fileID: 114690795959096990}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Player1
@@ -262,6 +263,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114690795959096990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056644338501288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
 --- !u!114 &114699908818050360
 MonoBehaviour:
   m_ObjectHideFlags: 1

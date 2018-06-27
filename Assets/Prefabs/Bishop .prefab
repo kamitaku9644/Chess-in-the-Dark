@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 136874288479232422}
   - component: {fileID: 65756330410721584}
   - component: {fileID: 114663634427768770}
+  - component: {fileID: 114625885077872826}
   m_Layer: 0
   m_Name: 'Bishop '
   m_TagString: Player1
@@ -241,6 +242,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadTimerate: 0.7
+--- !u!114 &114625885077872826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798249549377614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
 --- !u!114 &114663634427768770
 MonoBehaviour:
   m_ObjectHideFlags: 1

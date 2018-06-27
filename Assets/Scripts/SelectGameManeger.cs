@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectGameManeger : GameManager {
-    public GameObject rayCtl;
+    
 
 
     float timelimit;

@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 136474766065945818}
   - component: {fileID: 65570754590980878}
   - component: {fileID: 114530708000218660}
+  - component: {fileID: 114435426471645712}
   m_Layer: 0
   m_Name: Rook
   m_TagString: Player1
@@ -229,6 +230,18 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!114 &114435426471645712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843155898831644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
 --- !u!114 &114530708000218660
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 136745823294526614}
   - component: {fileID: 65169593944921646}
   - component: {fileID: 114636108658175036}
+  - component: {fileID: 114612487474475238}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player1
@@ -284,6 +285,18 @@ MonoBehaviour:
   m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114612487474475238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930957771852438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
 --- !u!114 &114636108658175036
 MonoBehaviour:
   m_ObjectHideFlags: 1
