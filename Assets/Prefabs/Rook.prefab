@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 223808537932258854}
   - component: {fileID: 114663195165407920}
   - component: {fileID: 114663282099217514}
+  - component: {fileID: 114574908438472798}
   m_Layer: 5
   m_Name: 'Loading '
   m_TagString: Untagged
@@ -60,6 +61,8 @@ GameObject:
   - component: {fileID: 23235875678546146}
   - component: {fileID: 136474766065945818}
   - component: {fileID: 65570754590980878}
+  - component: {fileID: 114530708000218660}
+  - component: {fileID: 114435426471645712}
   m_Layer: 0
   m_Name: Rook
   m_TagString: Player1
@@ -91,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184802454635720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5000013, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4925397399218884}
@@ -105,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 1843155898831644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.5000005}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 224809769213699842}
   - {fileID: 4539142990732094}
@@ -227,6 +230,44 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!114 &114435426471645712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843155898831644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
+--- !u!114 &114530708000218660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843155898831644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f554f62ea92b5ee4ab2e5e250fcf6349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
+    type: 2}
+  selectableList: []
+--- !u!114 &114574908438472798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434557630580986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ebc345a9152bf44998d29d39a43d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadTimerate: 0.7
 --- !u!114 &114663195165407920
 MonoBehaviour:
   m_ObjectHideFlags: 1

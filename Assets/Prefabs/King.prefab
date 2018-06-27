@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23365293793183624}
   - component: {fileID: 136306974040181614}
   - component: {fileID: 65854178420013916}
+  - component: {fileID: 114891049606312628}
+  - component: {fileID: 114037240164879442}
   m_Layer: 0
   m_Name: King
   m_TagString: Player1
@@ -77,6 +79,7 @@ GameObject:
   - component: {fileID: 223013504772320332}
   - component: {fileID: 114135338024675820}
   - component: {fileID: 114241067307700834}
+  - component: {fileID: 114335664734225168}
   m_Layer: 5
   m_Name: Loading
   m_TagString: Untagged
@@ -91,8 +94,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010072715351594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0, z: -3.5}
-  m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.5000005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 224145649662944114}
   - {fileID: 4636765562332626}
@@ -209,6 +212,18 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015994050288534}
   m_Enabled: 1
+--- !u!114 &114037240164879442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010072715351594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
 --- !u!114 &114057218489576470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +248,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.007
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!114 &114135338024675820
@@ -273,6 +288,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114335664734225168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901624661197982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ebc345a9152bf44998d29d39a43d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadTimerate: 0.7
+--- !u!114 &114891049606312628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010072715351594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4046c9b19ce954d96e430b50a19bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
+    type: 2}
+  selectableList: []
 --- !u!114 &114944624068723948
 MonoBehaviour:
   m_ObjectHideFlags: 1
