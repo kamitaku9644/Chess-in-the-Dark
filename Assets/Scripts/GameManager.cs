@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    public enum GameState { start, select, move, search, interval, result }
-    GameState gameState;
-    public GameState PGameState
+    
+    static GameState gameState;
+    public static GameState PGameState
     {
+        get { return gameState; }
         set { gameState = value; }
     }
 
-    bool moveComp;
+    static bool moveComp;
 
-    public bool MoveComp
+    public static bool MoveComp
     {
         private get { return moveComp; }
         set { moveComp = value; }
     }
 
    
-    public GameObject selectGM;     
-    
+    public GameObject selectGM;
+
 
     RayController rayController;
 
@@ -34,23 +35,25 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        print("GM:" +gameState);
         switch (gameState)
         {
             case GameState.select:
                 selectGM.SetActive(true);
-
                 break;
                 
 
-            case GameState.move:
-                print(rayController.HittedPlayer.name);
-                print(rayController.HittedSquare.name);
+            case GameState.moverdy:
                 moveComp = false;
                 selectGM.SetActive(false);
-                rayController.HittedPlayer.GetComponentInChildren<IMove>().Move(rayController.HittedSquare);
-                if (moveComp) { gameState = GameState.search; }
+                RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
+                gameState = GameState.move;
                 break;
 
+            case GameState.move:
+                RayController.HittedPlayer.GetComponentInChildren<IMove>().Move();
+                if (moveComp) { gameState = GameState.search; }
+                break;
 
             case GameState.search:
                 print("search");

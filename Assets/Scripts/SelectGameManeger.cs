@@ -7,7 +7,7 @@ public class SelectGameManeger : GameManager {
 
 
     float timelimit;
-    protected GameManager gameManager;
+    GameManager gameManager;
 
     private void OnEnable()
     {
@@ -18,14 +18,13 @@ public class SelectGameManeger : GameManager {
 	
 	// Update is called once per frame
 	void Update () {
-        rayCtl.SetActive(true);
        if(timelimit >= 0) timelimit -= Time.deltaTime;
         
 	}
     private void LateUpdate()
     {
         if(timelimit < 0) {
-            gameManager.PGameState = GameState.interval;
+            PGameState = GameState.interval;
             this.gameObject.SetActive(false);
         }
     }

@@ -11,27 +11,26 @@ public class MoveController : MonoBehaviour,IMove {
     }
 
 
-    GameManager gameManager;
-    RayController rayController;
+    public GameObject mainCamera;
 
     bool look;
     Vector3 movePosition;
 
-    public void Move(GameObject hittedSquare)
+    public void MoveRdy(GameObject hittedSquare)
     {
         playerCamera = this.gameObject.transform.GetChild(1).gameObject;
         movePosition = hittedSquare.transform.localPosition;
-        rayController.mainCamera.SetActive(false);
+        mainCamera.SetActive(false);
+        playerCamera.SetActive(true);
+        playerCamera.transform.LookAt(this.gameObject.transform.parent.transform.TransformPoint(movePosition));
         
-        if (!look)
-        {
-            playerCamera.transform.LookAt(movePosition);
-            look = true;
-        }
-        playerCamera.SetActive(!rayController.mainCamera.activeSelf);
+    }
+    public void Move()
+    {
+           
         this.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, movePosition, Time.deltaTime * 0.8f);
 
-        if(this.transform.localPosition == movePosition) { gameManager.MoveComp = true; }
-        
+        if (this.transform.localPosition == movePosition) { GameManager.MoveComp = true; }
+
     }
 }

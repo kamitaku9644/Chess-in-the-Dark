@@ -16,5 +16,8 @@ interface ILoading
 
 interface IMove
 {
-    void Move(GameObject hittedSquare);
+    void MoveRdy(GameObject hittedSquare);
+    void Move();
 }
+
+public enum GameState { start, select, moverdy, move, search, interval, result }
