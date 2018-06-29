@@ -68,15 +68,16 @@ public class MovableController : MonoBehaviour {
         }
     }
 
-    public void Movable()
+    public void MovableSS()
     {
-        QueueMovable();
-        RowMovable();
-        DiagonalMovable();
+        QueueMovableSS();
+        RowMovableSS();
+        DiagonalMovableSS();
+       
     }
 
 
-    protected void KnightMovable()
+    protected void KnightMovableSS()
     {
         var parent = playerName.transform;
         int i = nowSquareQueue;
@@ -219,7 +220,7 @@ public class MovableController : MonoBehaviour {
 
 
     //列移動可能範囲
-    void QueueMovable()
+    void QueueMovableSS()
     {
         int i;
         bool queueCheck;
@@ -272,7 +273,7 @@ public class MovableController : MonoBehaviour {
 
 
     //行移動可能範囲
-    void RowMovable()
+    void RowMovableSS()
     {
         int i;
         bool rowCheck;
@@ -320,7 +321,7 @@ public class MovableController : MonoBehaviour {
     }
 
     //斜め移動可能範囲
-    void DiagonalMovable()
+    void DiagonalMovableSS()
     {
         int i;
         int ii;

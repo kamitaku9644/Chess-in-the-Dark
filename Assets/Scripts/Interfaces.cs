@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 interface IMovable {
-    void Movable();
+    void MovableSS();
+    bool Movable();
     void SSinit();
 }
 

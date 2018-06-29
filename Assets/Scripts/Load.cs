@@ -31,7 +31,10 @@ public class Load : MonoBehaviour,ILoading {
 
     public void Loadinit()
     {
-        loadCtl.fillAmount = 0;
-        loadtime = 0;
+        if (loadtime > 0)
+        {
+            loadCtl.fillAmount = 0;
+            loadtime = 0;
+        }
     }
 }

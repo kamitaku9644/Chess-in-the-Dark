@@ -73,12 +73,15 @@ public class RayController : MonoBehaviour
                                 {
                                     hittedPlayer = hittedObj;
                                     playerLoad = hittedPlayer.GetComponentInChildren<ILoading>();
-                                    hittedPlayer.GetComponent<IMovable>().Movable();
+                                    hittedPlayer.GetComponent<IMovable>().MovableSS();
                                 }
                                 else
                                 {
-                                    playerLoad.Loading();
-                                    if (playerLoad.LoadComp()) { selectState = SelectState.squareSelect; }
+                                    if (hittedPlayer.GetComponent<IMovable>().Movable())
+                                    {
+                                        playerLoad.Loading();
+                                        if (playerLoad.LoadComp()) { selectState = SelectState.squareSelect; }
+                                    }
 
                                 }
                             }
@@ -152,9 +155,9 @@ public class RayController : MonoBehaviour
 
                             if (hittedPlayer != null)
                             {
-                                playerLoad.Loadinit();
-                                hittedPlayer.GetComponent<IMovable>().SSinit();
+                               hittedPlayer.GetComponent<IMovable>().SSinit();
                                 hittedPlayer = null;
+                                if(playerLoad != null) { playerLoad.Loadinit(); }
                             }
 
                             break;
