@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InitializeController : MonoBehaviour {
-    public GameObject player1;
+    
     
     public GameObject archer;
     public GameObject bishop;
@@ -14,9 +14,9 @@ public class InitializeController : MonoBehaviour {
     public GameObject swordman;
 
     
-    public void Player1Init()
+    public void PlayerInit(GameObject player)
     {
-        Transform parent = player1.transform;
+        Transform parent = player.transform;
 
         Instantiate(king, parent.transform.TransformPoint(0.5f, 0, -5.5f), parent.rotation, parent);
         Instantiate(queen, parent.transform.TransformPoint(-0.5f, 0, -5.5f), parent.rotation, parent);

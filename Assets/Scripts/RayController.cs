@@ -24,20 +24,18 @@ public class RayController : MonoBehaviour
         get { return hittedSquare; }
     }
 
-    public GameObject mainCamera;
+   
     bool rayhitted;
-    GameObject hittedObj;
-
-
-
+    GameObject hittedObj;    
     GameObject hesHittedPlayer;
-    ILoading playerLoad;
-
-
+    ILoading playerLoad;    
     ILoading squareLoad;
+
+    string playerName;
 
     void OnEnable()
     {
+        playerName = this.transform.tag;
         hittedObj = null;
         hittedPlayer = null;
         hittedSquare = null;
@@ -51,7 +49,7 @@ public class RayController : MonoBehaviour
         print("RC:" + GameManager.PGameState);
 
 
-        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
+        Ray ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
 
         switch (GameManager.PGameState) {
@@ -69,7 +67,7 @@ public class RayController : MonoBehaviour
                     {
                         case SelectState.playerSelect:
 
-                            if (hittedObj.tag == "Player1")
+                            if (hittedObj.transform.parent.tag == playerName)
                             {
                                 if (hittedPlayer == null)
                                 {
@@ -92,7 +90,7 @@ public class RayController : MonoBehaviour
                         case SelectState.squareSelect:
 
                             //playseselect cancel
-                            if (hittedObj.tag == "Player1")
+                            if (hittedObj.transform.parent.tag == playerName)
                             {
                                 if (hesHittedPlayer == null)
                                 {

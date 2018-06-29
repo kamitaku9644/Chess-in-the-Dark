@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114557126198886628}
   m_Layer: 0
   m_Name: Queen
-  m_TagString: Player1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1896609652119216, guid: d03c33a387b7bcb4890044e4b9e3dece, type: 2}
 --- !u!114 &114579865009566348
 MonoBehaviour:
   m_ObjectHideFlags: 1

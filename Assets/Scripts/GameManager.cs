@@ -19,10 +19,11 @@ public class GameManager : MonoBehaviour {
         set { moveComp = value; }
     }
 
-    public GameObject mainCamera;   
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player1Camera;
+    public GameObject player2Camera;
     public GameObject selectGM;
-    public GameObject rayCtl;
-    public GameObject initCtl;
     
 
     // Use this for initialization
@@ -47,13 +48,15 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.selectrdy:
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
-                mainCamera.SetActive(true);
+                print(RayController.HittedPlayer.transform.parent.name);
+                if (RayController.HittedPlayer.transform.parent == player2.transform) { player1Camera.SetActive(true); }
+                else if (RayController.HittedPlayer.transform.parent == player1.transform) { player2Camera.SetActive(true); }
+                
                 gameState = GameState.select;
                 break;
 
             case GameState.select:
                 selectGM.SetActive(true);
-                rayCtl.SetActive(true);
 
                 break;
                 
@@ -61,8 +64,8 @@ public class GameManager : MonoBehaviour {
             case GameState.moverdy:
                 moveComp = false;
                 selectGM.SetActive(false);
-                rayCtl.SetActive(false);
-                mainCamera.SetActive(false);
+                if (RayController.HittedPlayer.transform.parent == player1.transform) { player1Camera.SetActive(false); }
+                else if (RayController.HittedPlayer.transform.parent == player2.transform) { player2Camera.SetActive(false); }
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
                 gameState = GameState.move;
                 break;
@@ -86,6 +89,9 @@ public class GameManager : MonoBehaviour {
 	}
     private void LateUpdate()
     {
-        if(gameState == GameState.initialize) { initCtl.GetComponentInChildren<InitializeController>().Player1Init(); }
+        if(gameState == GameState.initialize) {
+            this.GetComponentInChildren<InitializeController>().PlayerInit(player1);
+            this.GetComponentInChildren<InitializeController>().PlayerInit(player2);
+        }
     }
 }

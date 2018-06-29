@@ -20,7 +20,7 @@ public class MovableController : MonoBehaviour {
     protected int nowSquareQueue;
     protected int nowSquareRow;
 
-
+    Quaternion rotate = new Quaternion(-90, 0, 0, 0);
 
     public List<GameObject> selectableList = new List<GameObject>();
    
@@ -91,7 +91,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii + 1], 0.1f, queue[i + 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -104,7 +106,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii - 1], 0.1f, queue[i + 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -120,7 +124,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii + 1], 0.1f, queue[i - 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -133,7 +139,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii - 1], 0.1f, queue[i - 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -149,7 +157,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii + 2], 0.1f, queue[i - 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -162,7 +172,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii - 2], 0.1f, queue[i - 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -178,7 +190,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii + 2], 0.1f, queue[i + 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -191,7 +205,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
-                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                    GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                    selectablesquare.transform.parent = parent;
+                    selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                     selectablesquare.transform.localPosition = new Vector3(row[ii - 2], 0.1f, queue[i + 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
@@ -219,7 +235,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } }
                 if (!queueCheck) { break; }
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(selectedPlayer.transform.localPosition.x, 0.1f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -237,7 +255,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } }
                 if (!queueCheck) { break; }
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(selectedPlayer.transform.localPosition.x, 0.1f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -265,7 +285,9 @@ public class MovableController : MonoBehaviour {
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { rowCheck = false; } }
                 if (!rowCheck) { break; }
 
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(row[i], 0.1f, selectedPlayer.transform.localPosition.z);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -282,7 +304,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[i], 0, selectedPlayer.transform.localPosition.z), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { rowCheck = false; } }
                 if (!rowCheck) { break; }
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(row[i], 0.1f, selectedPlayer.transform.localPosition.z);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -309,7 +333,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
                 if (!diagonalCheck) { break; }
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -325,8 +351,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
                 if (!diagonalCheck) { break; }
-
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -341,7 +368,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
                 if (!diagonalCheck) { break; }
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
@@ -356,7 +385,9 @@ public class MovableController : MonoBehaviour {
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
                 if (!diagonalCheck) { break; }
-                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), parent.rotation, parent);
+                GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
+                selectablesquare.transform.parent = parent;
+                selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
                 selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
