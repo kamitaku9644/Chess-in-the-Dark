@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.selectrdy:
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
-                print(RayController.HittedPlayer.transform.parent.name);
                 if (RayController.HittedPlayer.transform.parent == player2.transform) { player1Camera.SetActive(true); }
                 else if (RayController.HittedPlayer.transform.parent == player1.transform) { player2Camera.SetActive(true); }
                 

@@ -87,14 +87,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii + 1 && ii + 1 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 1], 0, queue[i + 2]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 1], -0.5f, queue[i + 2]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii + 1], 0.1f, queue[i + 2]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii + 1], -0.4f, queue[i + 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -102,14 +102,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii - 1 && ii - 1 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 1], 0, queue[i + 2]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 1], -0.5f, queue[i + 2]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii - 1], 0.1f, queue[i + 2]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii - 1], -0.4f, queue[i + 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -120,14 +120,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii + 1 && ii + 1 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 1], 0, queue[i - 2]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 1], -0.5f, queue[i - 2]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii + 1], 0.1f, queue[i - 2]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii + 1], -0.4f, queue[i - 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -135,14 +135,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii - 1 && ii - 1 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 1], 0, queue[i - 2]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 1], -0.5f, queue[i - 2]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii - 1], 0.1f, queue[i - 2]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii - 1], -0.4f, queue[i - 2]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -153,14 +153,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii + 2 && ii + 2 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 2], 0, queue[i - 1]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 2], -0.5f, queue[i - 1]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii + 2], 0.1f, queue[i - 1]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii + 2], -0.4f, queue[i - 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -168,14 +168,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii - 2 && ii - 2 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 2], 0, queue[i - 1]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 2], -0.5f, queue[i - 1]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii - 2], 0.1f, queue[i - 1]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii - 2], -0.4f, queue[i - 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -186,14 +186,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii + 2 && ii + 2 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 2], 0, queue[i + 1]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 2], -0.5f, queue[i + 1]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii + 2], 0.1f, queue[i + 1]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii + 2], -0.4f, queue[i + 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -201,14 +201,14 @@ public class MovableController : MonoBehaviour {
             if (0 <= ii - 2 && ii - 2 < 12)
             {
                 bool knightCheck = true;
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 2], 0, queue[i + 1]), 0.1f);
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 2], -0.5f, queue[i + 1]), 0.1f);
                 foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                     selectablesquare.transform.parent = parent;
                     selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    selectablesquare.transform.localPosition = new Vector3(row[ii - 2], 0.1f, queue[i + 1]);
+                    selectablesquare.transform.localPosition = new Vector3(row[ii - 2], -0.4f, queue[i + 1]);
                     selectableList.Add(selectablesquare);
                     selectablesquare.name = selectableSquare.name;
                 }
@@ -223,44 +223,46 @@ public class MovableController : MonoBehaviour {
     {
         int i;
         bool queueCheck;
+        bool opponentCheck;
         var parent = playerName.transform;
         
 
         //後方への移動
-        for (i = nowSquareQueue - 1, queueCheck = true; i >= nowSquareQueue - back; i--)
+        for (i = nowSquareQueue - 1, queueCheck = true,  opponentCheck = true; i >= nowSquareQueue - back; i--)
         {
 
             if (0 <= i && i < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, 0, queue[i]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, -0.5f, queue[i]), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } else { opponentCheck = false; } }
                 if (!queueCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(selectedPlayer.transform.localPosition.x, 0.1f, queue[i]);
+                selectablesquare.transform.localPosition = new Vector3(selectedPlayer.transform.localPosition.x, -0.4f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
-
+                if (opponentCheck == false) { break; }
             }
 
         }
 
         //前方への移動
-        for (i = nowSquareQueue + 1, queueCheck = true; i <= nowSquareQueue + forward; i++)
+        for (i = nowSquareQueue + 1, queueCheck = true, opponentCheck = true; i <= nowSquareQueue + forward; i++)
         {
             if (0 <= i & i < 12)
             {
                 
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, 0, queue[i]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(selectedPlayer.transform.localPosition.x, -0.5f, queue[i]), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { queueCheck = false; } else { opponentCheck = false; } }
                 if (!queueCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(selectedPlayer.transform.localPosition.x, 0.1f, queue[i]);
+                selectablesquare.transform.localPosition = new Vector3(selectedPlayer.transform.localPosition.x, -0.4f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
+                if(opponentCheck == false) { break; }
 
             }
 
@@ -274,43 +276,44 @@ public class MovableController : MonoBehaviour {
     {
         int i;
         bool rowCheck;
+        bool opponentCheck;
         var parent = playerName.transform;
 
         //左への移動
-        for (i = nowSquareRow - 1, rowCheck = true; i >= nowSquareRow - left; i--)
+        for (i = nowSquareRow - 1, rowCheck = true, opponentCheck = true; i >= nowSquareRow - left; i--)
         {
             if (0 <= i && i < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[i], 0, selectedPlayer.transform.localPosition.z), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { rowCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[i], -0.5f, selectedPlayer.transform.localPosition.z), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { rowCheck = false; } else { opponentCheck = false; } }
                 if (!rowCheck) { break; }
 
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(row[i], 0.1f, selectedPlayer.transform.localPosition.z);
+                selectablesquare.transform.localPosition = new Vector3(row[i], -0.4f, selectedPlayer.transform.localPosition.z);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
-
+                if(opponentCheck == false) { break; }
             }
 
         }
 
         //右への移動
-        for (i = nowSquareRow + 1, rowCheck = true; i <= nowSquareRow + right; i++)
+        for (i = nowSquareRow + 1, rowCheck = true, opponentCheck = true; i <= nowSquareRow + right; i++)
         {
             if (0 <= i & i < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[i], 0, selectedPlayer.transform.localPosition.z), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { rowCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[i], -0.5f, selectedPlayer.transform.localPosition.z), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { rowCheck = false; } else { opponentCheck = false; } }
                 if (!rowCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(row[i], 0.1f, selectedPlayer.transform.localPosition.z);
+                selectablesquare.transform.localPosition = new Vector3(row[i], -0.4f, selectedPlayer.transform.localPosition.z);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
-
+                if(opponentCheck == false) { break; }
             }
 
         }
@@ -322,76 +325,78 @@ public class MovableController : MonoBehaviour {
         int i;
         int ii;
         bool diagonalCheck;
+        bool opponentCheck;
         var parent = playerName.transform;
 
         //左後方への移動
-        for (i = nowSquareQueue - 1, ii = nowSquareRow - 1, diagonalCheck = true; i >= nowSquareQueue - diagonal && ii >= nowSquareRow - diagonal; i--, ii--)
+        for (i = nowSquareQueue - 1, ii = nowSquareRow - 1, diagonalCheck = true, opponentCheck = true; i >= nowSquareQueue - diagonal && ii >= nowSquareRow - diagonal; i--, ii--)
         {
 
             if (0 <= i & i < 12 & 0 <= ii & ii < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], -0.5f, queue[i]), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } else { opponentCheck = false; } }
                 if (!diagonalCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
+                selectablesquare.transform.localPosition = new Vector3(row[ii], -0.4f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
-
+                if(opponentCheck == false) { break; }
             }
         }
         //右後方への移動
-        for (i = nowSquareQueue - 1, ii = nowSquareRow + 1, diagonalCheck = true; i >= nowSquareQueue - diagonal && ii <= nowSquareRow + diagonal; i--, ii++)
+        for (i = nowSquareQueue - 1, ii = nowSquareRow + 1, diagonalCheck = true, opponentCheck = true; i >= nowSquareQueue - diagonal && ii <= nowSquareRow + diagonal; i--, ii++)
         {
 
             if (0 <= i & i < 12 & 0 <= ii & ii < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], -0.5f, queue[i]), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } else { opponentCheck = false; } }
                 if (!diagonalCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
+                selectablesquare.transform.localPosition = new Vector3(row[ii], -0.4f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
+                if(opponentCheck == false) { break; }
 
             }
         }
         //左前方への移動
-        for (i = nowSquareQueue + 1, ii = nowSquareRow - 1, diagonalCheck = true; i <= nowSquareQueue + diagonal && ii >= nowSquareRow - diagonal; i++, ii--)
+        for (i = nowSquareQueue + 1, ii = nowSquareRow - 1, diagonalCheck = true, opponentCheck = true; i <= nowSquareQueue + diagonal && ii >= nowSquareRow - diagonal; i++, ii--)
         {
             if (0 <= i & i < 12 & 0 <= ii & ii < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], -0.5f, queue[i]), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } else { opponentCheck = false; } }
                 if (!diagonalCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
+                selectablesquare.transform.localPosition = new Vector3(row[ii], -0.4f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
-
+                if(opponentCheck == false) { break; }
             }
         }
         //右前方への移動
-        for (i = nowSquareQueue + 1, ii = nowSquareRow + 1, diagonalCheck = true; i <= nowSquareQueue + diagonal && ii <= nowSquareRow + diagonal; i++, ii++)
+        for (i = nowSquareQueue + 1, ii = nowSquareRow + 1, diagonalCheck = true,opponentCheck = true; i <= nowSquareQueue + diagonal && ii <= nowSquareRow + diagonal; i++, ii++)
         {
             if (0 <= i & i < 12 & 0 <= ii & ii < 12)
             {
-                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], 0, queue[i]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } }
+                Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii], -0.5f, queue[i]), 0.1f);
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { diagonalCheck = false; } else { opponentCheck = false; } }
                 if (!diagonalCheck) { break; }
                 GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
                 selectablesquare.transform.parent = parent;
                 selectablesquare.transform.rotation = new Quaternion(0, 0, 0, 0);
-                selectablesquare.transform.localPosition = new Vector3(row[ii], 0.1f, queue[i]);
+                selectablesquare.transform.localPosition = new Vector3(row[ii], -0.4f, queue[i]);
                 selectableList.Add(selectablesquare);
                 selectablesquare.name = selectableSquare.name;
-
+                if(opponentCheck == false) { break; }
             }
         }
 
