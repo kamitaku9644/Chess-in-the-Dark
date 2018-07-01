@@ -16,7 +16,7 @@ public class MoveController : MonoBehaviour,IMove {
     {
         this.GetComponent<IMovable>().SSinit();
         playerCamera = this.gameObject.transform.GetChild(1).gameObject;
-        movePosition = new Vector3(hittedSquare.transform.localPosition.x, 0, hittedSquare.transform.localPosition.z);
+        movePosition = new Vector3(hittedSquare.transform.localPosition.x, -0.25f, hittedSquare.transform.localPosition.z);
         playerCamera.SetActive(true);
         playerCamera.transform.LookAt(this.gameObject.transform.parent.transform.TransformPoint(movePosition));
         

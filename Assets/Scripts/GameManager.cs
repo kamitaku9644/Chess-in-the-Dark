@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour {
     public GameObject player1Camera;
     public GameObject player2Camera;
     public GameObject selectGM;
-    
+
+   
 
     // Use this for initialization
     void Start () {
@@ -48,6 +49,22 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.selectrdy:
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
+                Transform[] eachPlayer1 = player1.GetComponentsInChildren<Transform>();
+                Transform[] eachPlayer2 = player2.GetComponentsInChildren<Transform>();
+                foreach (Transform eachplayer in eachPlayer1)
+                {
+                    if (eachplayer.gameObject.tag == "Player")
+                    {
+                        eachplayer.localScale = new Vector3(0.5f, 0.25f, 0.5f);
+                    }
+                }
+                foreach (Transform eachplayer in eachPlayer2)
+                {
+                    if (eachplayer.gameObject.tag == "Player")
+                    {
+                        eachplayer.localScale = new Vector3(0.5f, 0.25f, 0.5f);
+                    }
+                }
                 if (RayController.HittedPlayer.transform.parent == player2.transform) { player1Camera.SetActive(true); }
                 else if (RayController.HittedPlayer.transform.parent == player1.transform) { player2Camera.SetActive(true); }
                 
@@ -63,6 +80,23 @@ public class GameManager : MonoBehaviour {
             case GameState.moverdy:
                 moveComp = false;
                 selectGM.SetActive(false);
+
+                eachPlayer1 = player1.GetComponentsInChildren<Transform>();
+                eachPlayer2 = player2.GetComponentsInChildren<Transform>();
+                foreach (Transform eachplayer in eachPlayer1)
+                {
+                    if (eachplayer.gameObject.tag == "Player")
+                    {
+                        eachplayer.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                    }
+                }
+                foreach (Transform eachplayer in eachPlayer2)
+                {
+                    if (eachplayer.gameObject.tag == "Player" )
+                    {
+                        eachplayer.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                    }
+                }
                 if (RayController.HittedPlayer.transform.parent == player1.transform) { player1Camera.SetActive(false); }
                 else if (RayController.HittedPlayer.transform.parent == player2.transform) { player2Camera.SetActive(false); }
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);

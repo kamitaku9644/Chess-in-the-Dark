@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 1056644338501288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.25, z: 0.5}
   m_Children:
   - {fileID: 224203209330979374}
   - {fileID: 4629914403462704}
@@ -258,6 +258,7 @@ MonoBehaviour:
   selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
     type: 2}
   selectableList: []
+  movable: 0
 --- !u!114 &114437571879320030
 MonoBehaviour:
   m_ObjectHideFlags: 1
