@@ -35,7 +35,7 @@ public class RayController : MonoBehaviour
 
     void OnEnable()
     {
-        playerName = this.transform.tag;
+        playerName = this.tag;
         hittedObj = null;
         hittedPlayer = null;
         hittedSquare = null;
@@ -47,6 +47,7 @@ public class RayController : MonoBehaviour
     void Update()
     {
         print("RC:" + GameManager.PGameState);
+        print(selectState);
 
 
         Ray ray = new Ray(this.transform.position, this.transform.forward);
@@ -93,7 +94,7 @@ public class RayController : MonoBehaviour
                         case SelectState.squareSelect:
 
                             //playseselect cancel
-                            if (hittedObj.transform.parent.tag == playerName)
+                            if (hittedObj.transform.parent.tag == playerName && hittedObj.tag == "Player")
                             {
                                 if (hesHittedPlayer == null)
                                 {
@@ -103,7 +104,6 @@ public class RayController : MonoBehaviour
                                 else
                                 {
                                     playerLoad.Loading();
-
                                     if (playerLoad.LoadComp())
                                     {
                                         hittedPlayer.GetComponent<IMovable>().SSinit();
@@ -128,9 +128,11 @@ public class RayController : MonoBehaviour
                                     squareLoad.Loading();
                                     if (squareLoad.LoadComp())
                                     {
+                                        print(squareLoad.LoadComp());
                                         GameManager.PGameState = GameState.moverdy;
 
                                     }
+
                                 }
                             }
 
@@ -189,12 +191,24 @@ public class RayController : MonoBehaviour
             case GameState.moverdy:
                
                 break;
+        }
+
+
     }
+    private void LateUpdate()
+    {
+        switch (selectState)
+        {
 
-
-}
-
-
+            case SelectState.playerSelect:
+                
+                break;
+            case SelectState.squareSelect:
+                
+                
+                break;
+        }
+    }
 
 
 
