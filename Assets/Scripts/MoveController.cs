@@ -34,9 +34,6 @@ public class MoveController : MonoBehaviour,IMove {
         playerCamera.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.transform.tag == "Player" && other.gameObject.transform.parent != this.transform.parent && RayController.HittedPlayer != this.gameObject) { Destroy(this.gameObject); }
-    }
+    
 
 }

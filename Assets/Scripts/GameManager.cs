@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
         _gameState
             .Subscribe(state =>
             {
-                print(state);
+                disposable.Clear();
                 GameStateChanged(state);
             });
         
@@ -135,7 +135,6 @@ public class GameManager : MonoBehaviour {
 
     private void Selectrdy()
     {
-        disposable.Clear();
         RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
         
         scaleManager.SelectScale(player1,player2);
@@ -153,16 +152,16 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Moverdy()
-    {
-        disposable.Clear();
+    { 
+
         moveComp = false;
-        
-
-
         if (PlayerTurn == 1) { player1Camera.SetActive(false); }
         else if (PlayerTurn == 2) { player2Camera.SetActive(false); }
+
         RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
+
         scaleManager.MoveScale(player1, player2);
+
         GameState = GameState.move;
     }
 
