@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class GameManager : MonoBehaviour {
-    
-    static GameState gameState;
-    public static GameState PGameState
+
+    private static ReactiveProperty<GameState> _gameState = new ReactiveProperty<GameState>(GameState.initialize);
+    public static GameState GameState
     {
-        get { return gameState; }
-        set { gameState = value; }
+        get { return _gameState.Value; }
+        set { _gameState.Value = value; }
     }
 
     static bool moveComp;
@@ -19,112 +20,146 @@ public class GameManager : MonoBehaviour {
         set { moveComp = value; }
     }
 
-    public GameObject player1;
-    public GameObject player2;
-    public GameObject player1Camera;
-    public GameObject player2Camera;
-    public GameObject selectGM;
+    [SerializeField] private GameObject player1;
+    [SerializeField] private GameObject player2;
+    [SerializeField] private GameObject player1Camera;
+    [SerializeField] private GameObject player2Camera;
+ 
 
-   
+
+    RayController rayController1;
+    RayController rayController2;
+    TimeManager timeManeger;
+    InitializeController initializeController;
+    ScaleManager scaleManager;
 
     // Use this for initialization
     void Start () {
-        gameState = GameState.initialize;
-        selectGM.SetActive(false);
+
+        rayController1 = player1Camera.GetComponentInChildren<RayController>();
+        rayController2 = player2Camera.GetComponentInChildren<RayController>();
+        timeManeger = this.GetComponentInChildren<TimeManager>();
+        initializeController = this.GetComponentInChildren<InitializeController>();
+        scaleManager = this.GetComponentInChildren<ScaleManager>();
+
+
+        _gameState
+            .Subscribe(state =>
+            {
+                print(state);
+                GameStateChanged(state);
+            });
+        
 	}
 
-   
-
-
-
     // Update is called once per frame
-    void Update () {
-        print("GM:" +gameState);
-        switch (gameState)
+    void Update()
+    {
+        switch (GameState)
         {
-            case GameState.initialize:       
-                gameState = GameState.select;
-               
-                
-                break;
-            case GameState.selectrdy:
-                RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
-                Transform[] eachPlayer1 = player1.GetComponentsInChildren<Transform>();
-                Transform[] eachPlayer2 = player2.GetComponentsInChildren<Transform>();
-                foreach (Transform eachplayer in eachPlayer1)
-                {
-                    if (eachplayer.gameObject.tag == "Player")
-                    {
-                        eachplayer.localScale = new Vector3(0.5f, 0.25f, 0.5f);
-                    }
-                }
-                foreach (Transform eachplayer in eachPlayer2)
-                {
-                    if (eachplayer.gameObject.tag == "Player")
-                    {
-                        eachplayer.localScale = new Vector3(0.5f, 0.25f, 0.5f);
-                    }
-                }
-                if (RayController.HittedPlayer.transform.parent == player2.transform) { player1Camera.SetActive(true); }
-                else if (RayController.HittedPlayer.transform.parent == player1.transform) { player2Camera.SetActive(true); }
-                
-                gameState = GameState.select;
-                break;
-
+            
             case GameState.select:
-                selectGM.SetActive(true);
-
-                break;
+                timeManeger.CountTime();
+                if (SelectManager.Selecting)
+                {
+                    if (player1Camera.activeSelf) { rayController1.PlayerSelect(); }
+                    if (player2Camera.activeSelf) { rayController2.PlayerSelect(); }
+                }
                 
 
-            case GameState.moverdy:
-                moveComp = false;
-                selectGM.SetActive(false);
-
-                eachPlayer1 = player1.GetComponentsInChildren<Transform>();
-                eachPlayer2 = player2.GetComponentsInChildren<Transform>();
-                foreach (Transform eachplayer in eachPlayer1)
-                {
-                    if (eachplayer.gameObject.tag == "Player")
-                    {
-                        eachplayer.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                    }
-                }
-                foreach (Transform eachplayer in eachPlayer2)
-                {
-                    if (eachplayer.gameObject.tag == "Player" )
-                    {
-                        eachplayer.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                    }
-                }
-                if (RayController.HittedPlayer.transform.parent == player1.transform) { player1Camera.SetActive(false); }
-                else if (RayController.HittedPlayer.transform.parent == player2.transform) { player2Camera.SetActive(false); }
-                RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
-                gameState = GameState.move;
                 break;
 
             case GameState.move:
                 RayController.HittedPlayer.GetComponentInChildren<IMove>().Move();
-                if (moveComp) { gameState = GameState.search; }
+
                 break;
 
             case GameState.search:
-                print("search");
-                gameState = GameState.selectrdy;
+                
                 break;
             case GameState.interval:
-                print("interval");
-                gameState = GameState.selectrdy;
+               
                 break;
         }
 
-        
-	}
-    private void LateUpdate()
+
+    }
+
+    private void GameStateChanged(GameState state)
     {
-        if(gameState == GameState.initialize) {
-            this.GetComponentInChildren<InitializeController>().PlayerInit(player1);
-            this.GetComponentInChildren<InitializeController>().PlayerInit(player2);
+        
+        switch (state)
+        {
+            case GameState.initialize:
+
+                Initialize();
+
+                break;
+            case GameState.selectrdy:
+                
+                break;
+
+            case GameState.select:
+                timeManeger.CountSet(30);
+
+                break;
+
+
+            case GameState.moverdy:
+                Moverdy();
+                break;
+
+            case GameState.move:
+                
+                break;
+
+            case GameState.search:
+               
+                GameState = GameState.selectrdy;
+                break;
+            case GameState.interval:
+               
+                GameState = GameState.selectrdy;
+                break;
         }
+    }
+
+
+
+    
+
+    private void Initialize()
+    {
+        initializeController.PlayerInit(player1);
+        initializeController.PlayerInit(player2);
+        GameState = GameState.select;
+    }
+
+    private void Selectrdy()
+    {
+        RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
+        if (RayController.HittedPlayer.transform.parent == player2.transform) { player1Camera.SetActive(true); }
+        else if (RayController.HittedPlayer.transform.parent == player1.transform) { player2Camera.SetActive(true); }
+        scaleManager.SelectScale(player1,player2);
+        GameState = GameState.select;
+    }
+
+    private void Moverdy()
+    {
+        moveComp = false;
+        
+
+
+        if (RayController.HittedPlayer.transform.parent == player1.transform) { player1Camera.SetActive(false); }
+        else if (RayController.HittedPlayer.transform.parent == player2.transform) { player2Camera.SetActive(false); }
+        RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
+        scaleManager.MoveScale(player1, player2);
+        GameState = GameState.move;
+    }
+
+
+    private void Select()
+    {
+
     }
 }
