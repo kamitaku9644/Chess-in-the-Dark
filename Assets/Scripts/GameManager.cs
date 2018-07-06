@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using UniRx.Triggers;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,22 +14,25 @@ public class GameManager : MonoBehaviour {
     }
 
     static bool moveComp;
-
     public static bool MoveComp
     {
         private get { return moveComp; }
         set { moveComp = value; }
     }
 
+    private static int _playerTurn = 1;
+    public static int PlayerTurn{
+        get { return _playerTurn; }
+    }
+
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
     [SerializeField] private GameObject player1Camera;
     [SerializeField] private GameObject player2Camera;
- 
 
+    private CompositeDisposable disposable = new CompositeDisposable();
 
-    RayController rayController1;
-    RayController rayController2;
+    
     TimeManager timeManeger;
     InitializeController initializeController;
     ScaleManager scaleManager;
@@ -36,8 +40,7 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        rayController1 = player1Camera.GetComponentInChildren<RayController>();
-        rayController2 = player2Camera.GetComponentInChildren<RayController>();
+        
         timeManeger = this.GetComponentInChildren<TimeManager>();
         initializeController = this.GetComponentInChildren<InitializeController>();
         scaleManager = this.GetComponentInChildren<ScaleManager>();
@@ -59,18 +62,13 @@ public class GameManager : MonoBehaviour {
         {
             
             case GameState.select:
-                timeManeger.CountTime();
-                if (SelectManager.Selecting)
-                {
-                    if (player1Camera.activeSelf) { rayController1.PlayerSelect(); }
-                    if (player2Camera.activeSelf) { rayController2.PlayerSelect(); }
-                }
+                
                 
 
                 break;
 
             case GameState.move:
-                RayController.HittedPlayer.GetComponentInChildren<IMove>().Move();
+               
 
                 break;
 
@@ -96,12 +94,12 @@ public class GameManager : MonoBehaviour {
 
                 break;
             case GameState.selectrdy:
-                
+                Selectrdy();
                 break;
 
             case GameState.select:
-                timeManeger.CountSet(30);
-
+                Select();
+                
                 break;
 
 
@@ -110,7 +108,7 @@ public class GameManager : MonoBehaviour {
                 break;
 
             case GameState.move:
-                
+                Move(); 
                 break;
 
             case GameState.search:
@@ -137,21 +135,32 @@ public class GameManager : MonoBehaviour {
 
     private void Selectrdy()
     {
+        disposable.Clear();
         RayController.HittedPlayer.GetComponentInChildren<IMove>().Moveinit();
-        if (RayController.HittedPlayer.transform.parent == player2.transform) { player1Camera.SetActive(true); }
-        else if (RayController.HittedPlayer.transform.parent == player1.transform) { player2Camera.SetActive(true); }
+        
         scaleManager.SelectScale(player1,player2);
+        if (PlayerTurn == 2)
+        {
+            _playerTurn = 1;
+            player1Camera.SetActive(true);
+        }
+        else if (PlayerTurn == 1)
+        {
+            _playerTurn = 2;
+            player2Camera.SetActive(true);
+        }
         GameState = GameState.select;
     }
 
     private void Moverdy()
     {
+        disposable.Clear();
         moveComp = false;
         
 
 
-        if (RayController.HittedPlayer.transform.parent == player1.transform) { player1Camera.SetActive(false); }
-        else if (RayController.HittedPlayer.transform.parent == player2.transform) { player2Camera.SetActive(false); }
+        if (PlayerTurn == 1) { player1Camera.SetActive(false); }
+        else if (PlayerTurn == 2) { player2Camera.SetActive(false); }
         RayController.HittedPlayer.GetComponentInChildren<IMove>().MoveRdy(RayController.HittedSquare);
         scaleManager.MoveScale(player1, player2);
         GameState = GameState.move;
@@ -160,6 +169,28 @@ public class GameManager : MonoBehaviour {
 
     private void Select()
     {
+        timeManeger.CountSet(30);
 
+        this.UpdateAsObservable()
+            .Subscribe(_ => timeManeger.CountTime())
+            .AddTo(disposable);
+        
+        
+        
+    }
+
+    private void Move()
+    {
+
+        this.UpdateAsObservable()
+            .Subscribe(_ =>
+            {
+                RayController.HittedPlayer.GetComponentInChildren<IMove>().Move();
+                if (moveComp) { GameState = GameState.selectrdy; }
+
+            })
+            .AddTo(disposable);
+
+        
     }
 }

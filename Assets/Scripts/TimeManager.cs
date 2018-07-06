@@ -2,25 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class TimeManager : MonoBehaviour {
 
     [SerializeField] private GameObject timelimitUI;
     
 
-    private float timelimit;
+    private static FloatReactiveProperty _timelimit;
+
+   
 
     public void CountSet(float i)
     {
-        timelimit = i;
-        SelectManager.Selecting = true;
+        _timelimit = new FloatReactiveProperty(i);
+       
     }
 
 	public void CountTime () {
-        if (timelimit >= 0)
+        if (_timelimit.Value >= 0)
         {
-            timelimit -= Time.deltaTime;
-            timelimitUI.GetComponentInChildren<Text>().text = ((int)timelimit).ToString();
+            _timelimit.Value -= Time.deltaTime;
+            timelimitUI.GetComponentInChildren<Text>().text = ((int)_timelimit.Value).ToString();
+            SelectManager.Selecting = true;
         }
         else
         {

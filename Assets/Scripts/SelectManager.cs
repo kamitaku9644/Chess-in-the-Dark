@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using UniRx.Triggers;
 
 public class SelectManager : MonoBehaviour {
 
@@ -13,14 +14,19 @@ public class SelectManager : MonoBehaviour {
         set { _selecting.Value = value; }
     }
 
+    
+    RayController rayController;
+
     private void Start()
     {
+        rayController = this.GetComponentInChildren<RayController>();
+
+        this.UpdateAsObservable()
+            .Subscribe(_ => rayController.PlayerSelect());
+            
+
         _selecting
             .Where(x => x == false)
-            .Subscribe(_ =>
-            {
-                
-                GameManager.GameState = GameState.interval;
-            });
+            .Subscribe(_ => GameManager.GameState = GameState.interval);
     }
 }
