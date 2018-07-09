@@ -46,7 +46,6 @@ public class SelectManager : MonoBehaviour{
                     GameManager.PlayerTurn = 1;
                     
                 }
-                print("turncahnge");
                 GameManager.GameState = GameState.interval;
             });
     }

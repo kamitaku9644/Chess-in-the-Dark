@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
         _playerTurn            
             .Subscribe(turn =>
             {
-                print("turn" + turn);
+                
                 if(turn == 1) {
                     player1Camera.SetActive(true);
                     player2Camera.SetActive(false);
@@ -170,7 +170,6 @@ public class GameManager : MonoBehaviour {
     {
         timeManager.CountSet(10);
         
-        print("set");
         this.LateUpdateAsObservable()
             .Where(_ => SelectManager.Selecting == true)
            .Subscribe(_ =>
