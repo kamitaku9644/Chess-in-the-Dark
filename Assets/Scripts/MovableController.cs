@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovableController : MonoBehaviour {
 
-    public GameObject selectableSquare;
+    [SerializeField] protected GameObject selectableSquare;
 
     //player property
     protected GameObject playerName;
@@ -51,7 +51,7 @@ public class MovableController : MonoBehaviour {
         for (a = -5.5f, b = 0; -6 < a & a < 6; a++, b++)
         {
             queue[b] = a;
-            if (a-1 < playerpositionz && playerpositionz <= a) { nowSquareQueue = b;}
+            if (a-0.5f < playerpositionz && playerpositionz <= a+0.5f) { nowSquareQueue = b;}
         }
     }
 
@@ -64,7 +64,7 @@ public class MovableController : MonoBehaviour {
         for (c = -5.5f, d = 0; -6 < c & c < 6; c++, d++)
         {
             row[d] = c;
-            if (c-1 <playerpositionx && playerpositionx <= c) { nowSquareRow = d; }
+            if (c-0.5f <playerpositionx && playerpositionx <= c+0.5f) { nowSquareRow = d; }
         }
     }
 

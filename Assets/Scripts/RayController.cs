@@ -24,7 +24,8 @@ public class RayController : MonoBehaviour
         get { return hittedSquare; }
     }
 
-   
+    
+
     bool rayhitted;
     GameObject hittedObj;    
     GameObject hesHittedPlayer;
@@ -46,15 +47,9 @@ public class RayController : MonoBehaviour
 
     public void PlayerSelect()
     {
-        
-        
-
-
         Ray ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
-
-
-
+        
         if (Physics.Raycast(ray, out hit))
         {
 
@@ -126,7 +121,7 @@ public class RayController : MonoBehaviour
                             squareLoad.Loading();
                             if (squareLoad.LoadComp())
                             {
-
+                                hittedSquare.GetComponent<IDestroy>().SetDestroyer();
                                 GameManager.GameState = GameState.moverdy;
 
                             }

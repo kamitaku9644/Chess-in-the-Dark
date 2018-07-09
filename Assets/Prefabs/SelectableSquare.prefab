@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 23593088329651256}
   - component: {fileID: 64362452445673528}
   - component: {fileID: 65321462921562262}
+  - component: {fileID: 114825455345925522}
   m_Layer: 0
   m_Name: SelectableSquare
   m_TagString: SelectableSquare
@@ -143,11 +144,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1915328361835732}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 0.5, z: 7}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 7, y: 1.5, z: 7}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &114145565280196486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114825455345925522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1915328361835732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5ad48b3de29be42a42db340b527b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyer: {fileID: 1019673337951602, guid: 12c79c61c5e147140840f2f1071e6a46, type: 2}
 --- !u!222 &222979970682973090
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -5,13 +5,13 @@ using UnityEngine;
 public class InitializeController : MonoBehaviour {
     
     
-    public GameObject archer;
-    public GameObject bishop;
-    public GameObject king;
-    public GameObject knight;
-    public GameObject queen;
-    public GameObject rook;
-    public GameObject swordman;
+    [SerializeField] private GameObject archer;
+    [SerializeField] private GameObject bishop;
+    [SerializeField] private GameObject king;
+    [SerializeField] private GameObject knight;
+    [SerializeField] private GameObject queen;
+    [SerializeField] private GameObject rook;
+    [SerializeField] private GameObject swordman;
 
     
     public void PlayerInit(GameObject player)

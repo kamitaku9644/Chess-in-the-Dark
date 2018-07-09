@@ -22,6 +22,11 @@ interface IMove
     void Moveinit();
 }
 
+interface IDestroy
+{
+    void SetDestroyer();
+}
+
 public enum GameState
 {
     start,

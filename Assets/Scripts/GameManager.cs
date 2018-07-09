@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject player2;
     [SerializeField] private GameObject player1Camera;
     [SerializeField] private GameObject player2Camera;
+    
 
     private CompositeDisposable disposable = new CompositeDisposable();
 
