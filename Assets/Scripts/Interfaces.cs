@@ -15,6 +15,11 @@ interface ILoading
     void Loadinit();
 }
 
+interface ISelect
+{
+    void Select();
+}
+
 interface IMove
 {
     void MoveRdy(GameObject hittedSquare);

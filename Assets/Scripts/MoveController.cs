@@ -31,7 +31,7 @@ public class MoveController : MonoBehaviour,IMove {
     }
     public void Moveinit()
     {
-        playerCamera.SetActive(false);
+        if (playerCamera.activeSelf) { playerCamera.SetActive(false); }
     }
 
     

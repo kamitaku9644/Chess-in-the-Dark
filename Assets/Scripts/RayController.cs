@@ -34,7 +34,7 @@ public class RayController : MonoBehaviour
 
     string playerName;
 
-    void OnEnable()
+    public void OnEnable()
     {
         playerName = this.tag;
         hittedObj = null;
@@ -185,7 +185,31 @@ public class RayController : MonoBehaviour
     }
    
 
+    public void Selectinit()
+    {
 
+        if (hittedPlayer != null)
+        {
+            hittedPlayer.GetComponent<IMovable>().SSinit();
+            hittedPlayer = null;
+            if (playerLoad != null) { playerLoad.Loadinit(); }
+        }
+
+        if (hesHittedPlayer != null)
+        {
+            playerLoad.Loadinit();
+            hesHittedPlayer = null;
+        }
+
+        if (hittedSquare != null)
+        {
+            squareLoad.Loadinit();
+            hittedSquare = null;
+        }
+
+
+        
+    }
 
 
 }

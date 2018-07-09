@@ -16,6 +16,7 @@ public class TimeManager : MonoBehaviour {
     public void CountSet(float i)
     {
         _timelimit = new FloatReactiveProperty(i);
+        SelectManager.Selecting = true;
        
     }
 
@@ -24,12 +25,15 @@ public class TimeManager : MonoBehaviour {
         {
             _timelimit.Value -= Time.deltaTime;
             timelimitUI.GetComponentInChildren<Text>().text = ((int)_timelimit.Value).ToString();
-            SelectManager.Selecting = true;
+            
+            
         }
-        else
+        else if(SelectManager.Selecting == true)
         {
             SelectManager.Selecting = false;
+            
         }
 	}
     
+   
 }

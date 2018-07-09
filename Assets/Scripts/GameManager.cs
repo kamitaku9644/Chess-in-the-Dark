@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using System;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour {
         set { _gameState.Value = value; }
     }
 
+    public static ReactiveProperty<GameState> PGameState
+    {
+        get { return _gameState; }
+    }
+
     static bool moveComp;
     public static bool MoveComp
     {
@@ -20,9 +26,11 @@ public class GameManager : MonoBehaviour {
         set { moveComp = value; }
     }
 
-    private static int _playerTurn = 1;
+    private static IntReactiveProperty _playerTurn = new IntReactiveProperty(1);
+
     public static int PlayerTurn{
-        get { return _playerTurn; }
+        get { return _playerTurn.Value; }
+        set { _playerTurn.Value = value; }
     }
 
     [SerializeField] private GameObject player1;
@@ -31,10 +39,13 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject player2Camera;
     
 
-    private CompositeDisposable disposable = new CompositeDisposable();
-
+    public CompositeDisposable _disposables = new CompositeDisposable();
+    public CompositeDisposable Disposables
+    {
+        get { return _disposables; }
+    }
     
-    TimeManager timeManeger;
+    TimeManager timeManager;
     InitializeController initializeController;
     ScaleManager scaleManager;
 
@@ -42,7 +53,7 @@ public class GameManager : MonoBehaviour {
     void Start () {
 
         
-        timeManeger = this.GetComponentInChildren<TimeManager>();
+        timeManager = this.GetComponentInChildren<TimeManager>();
         initializeController = this.GetComponentInChildren<InitializeController>();
         scaleManager = this.GetComponentInChildren<ScaleManager>();
 
@@ -50,39 +61,29 @@ public class GameManager : MonoBehaviour {
         _gameState
             .Subscribe(state =>
             {
-                disposable.Clear();
+                _disposables.Clear();
+                print(state);
                 GameStateChanged(state);
             });
-        
+
+        _playerTurn            
+            .Subscribe(turn =>
+            {
+                print("turn" + turn);
+                if(turn == 1) {
+                    player1Camera.SetActive(true);
+                    player2Camera.SetActive(false);
+                }
+                else if(turn == 2) {
+                    player1Camera.SetActive(false);
+                    player2Camera.SetActive(true);
+
+                }
+            });
+
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        switch (GameState)
-        {
-            
-            case GameState.select:
-                
-                
-
-                break;
-
-            case GameState.move:
-               
-
-                break;
-
-            case GameState.search:
-                
-                break;
-            case GameState.interval:
-               
-                break;
-        }
-
-
-    }
+  
 
     private void GameStateChanged(GameState state)
     {
@@ -117,8 +118,8 @@ public class GameManager : MonoBehaviour {
                 GameState = GameState.selectrdy;
                 break;
             case GameState.interval:
-               
-                GameState = GameState.selectrdy;
+                Interval();
+                
                 break;
         }
     }
@@ -141,13 +142,11 @@ public class GameManager : MonoBehaviour {
         scaleManager.SelectScale(player1,player2);
         if (PlayerTurn == 2)
         {
-            _playerTurn = 1;
-            player1Camera.SetActive(true);
+            PlayerTurn = 1;
         }
         else if (PlayerTurn == 1)
         {
-            _playerTurn = 2;
-            player2Camera.SetActive(true);
+            PlayerTurn = 2;
         }
         GameState = GameState.select;
     }
@@ -169,14 +168,18 @@ public class GameManager : MonoBehaviour {
 
     private void Select()
     {
-        timeManeger.CountSet(30);
+        timeManager.CountSet(10);
+        
+        print("set");
+        this.LateUpdateAsObservable()
+            .Where(_ => SelectManager.Selecting == true)
+           .Subscribe(_ =>
+           {
+               timeManager.CountTime();
+           })
+           .AddTo(Disposables);
+        
 
-        this.UpdateAsObservable()
-            .Subscribe(_ => timeManeger.CountTime())
-            .AddTo(disposable);
-        
-        
-        
     }
 
     private void Move()
@@ -189,8 +192,15 @@ public class GameManager : MonoBehaviour {
                 if (moveComp) { GameState = GameState.selectrdy; }
 
             })
-            .AddTo(disposable);
+            .AddTo(Disposables);
 
         
+    }
+
+    private void Interval()
+    {
+        
+        
+        GameState = GameState.select;
     }
 }
