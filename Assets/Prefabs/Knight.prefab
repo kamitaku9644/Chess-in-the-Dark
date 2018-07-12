@@ -81,6 +81,8 @@ GameObject:
   - component: {fileID: 114636108658175036}
   - component: {fileID: 114612487474475238}
   - component: {fileID: 54351444140324648}
+  - component: {fileID: 114052131021796254}
+  - component: {fileID: 114249261190741972}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -240,6 +242,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadTimerate: 0.7
+--- !u!114 &114052131021796254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930957771852438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25fb778eb6ec0842a0114532f950c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114220143962710802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +269,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114249261190741972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930957771852438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811c8c5222f1e2e46a4d62e8fbb836fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableList: []
 --- !u!114 &114434392135346684
 MonoBehaviour:
   m_ObjectHideFlags: 1

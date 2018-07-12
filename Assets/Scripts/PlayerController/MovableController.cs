@@ -283,7 +283,7 @@ public class MovableController : MonoBehaviour {
             {
                 bool knightCheck = true;
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 1], -0.5f, queue[i + 2]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; }}
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
@@ -298,7 +298,7 @@ public class MovableController : MonoBehaviour {
             {
                 bool knightCheck = true;
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 1], -0.5f, queue[i + 2]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; }}
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
@@ -331,7 +331,7 @@ public class MovableController : MonoBehaviour {
             {
                 bool knightCheck = true;
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii - 1], -0.5f, queue[i - 2]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; }}
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);
@@ -349,7 +349,7 @@ public class MovableController : MonoBehaviour {
             {
                 bool knightCheck = true;
                 Collider[] check = Physics.OverlapSphere(parent.transform.TransformPoint(row[ii + 2], -0.5f, queue[i - 1]), 0.1f);
-                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; } }
+                foreach (Collider c in check) { if (c.gameObject.transform.parent == parent) { knightCheck = false; }}
                 if (knightCheck)
                 {
                     GameObject selectablesquare = (GameObject)Instantiate(selectableSquare, new Vector3(0, 0, 0), rotate);

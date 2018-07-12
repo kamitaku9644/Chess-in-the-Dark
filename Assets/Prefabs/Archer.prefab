@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114426310955407874}
   - component: {fileID: 114690795959096990}
   - component: {fileID: 54552285301394944}
+  - component: {fileID: 114364108834592142}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Player
@@ -244,6 +245,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114364108834592142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056644338501288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25fb778eb6ec0842a0114532f950c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114426310955407874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +270,6 @@ MonoBehaviour:
   selectableSquare: {fileID: 1915328361835732, guid: ceff01ee13335084081bd9c59c07abf1,
     type: 2}
   selectableList: []
-  movable: 0
 --- !u!114 &114437571879320030
 MonoBehaviour:
   m_ObjectHideFlags: 1

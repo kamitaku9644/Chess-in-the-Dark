@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114891049606312628}
   - component: {fileID: 114037240164879442}
   - component: {fileID: 54608423071733264}
+  - component: {fileID: 114678389060736450}
   m_Layer: 0
   m_Name: King
   m_TagString: Player
@@ -315,6 +316,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadTimerate: 0.7
+--- !u!114 &114678389060736450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010072715351594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25fb778eb6ec0842a0114532f950c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114891049606312628
 MonoBehaviour:
   m_ObjectHideFlags: 1

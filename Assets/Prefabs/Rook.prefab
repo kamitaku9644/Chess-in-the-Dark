@@ -64,6 +64,8 @@ GameObject:
   - component: {fileID: 114530708000218660}
   - component: {fileID: 114435426471645712}
   - component: {fileID: 54970065406696848}
+  - component: {fileID: 114403888749457970}
+  - component: {fileID: 114252350401832756}
   m_Layer: 0
   m_Name: Rook
   m_TagString: Player
@@ -228,6 +230,29 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184802454635720}
   m_Enabled: 1
+--- !u!114 &114252350401832756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843155898831644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804652d5503d2b54ba1c28cdf6ef1761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableList: []
+--- !u!114 &114403888749457970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843155898831644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25fb778eb6ec0842a0114532f950c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114413617612672876
 MonoBehaviour:
   m_ObjectHideFlags: 1

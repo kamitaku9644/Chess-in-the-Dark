@@ -27,6 +27,11 @@ interface IMove
     void Moveinit();
 }
 
+interface ISearch
+{
+    void Searched(int Searchcount);
+}
+
 interface IDestroy
 {
     void SetDestroyer();

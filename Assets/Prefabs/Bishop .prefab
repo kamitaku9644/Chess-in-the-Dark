@@ -64,6 +64,8 @@ GameObject:
   - component: {fileID: 114663634427768770}
   - component: {fileID: 114625885077872826}
   - component: {fileID: 54672925364632830}
+  - component: {fileID: 114989532090299688}
+  - component: {fileID: 114082385067704322}
   m_Layer: 0
   m_Name: 'Bishop '
   m_TagString: Player
@@ -246,6 +248,18 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!114 &114082385067704322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798249549377614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32c6549f1888b14ba18b8f3e3dfea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableList: []
 --- !u!114 &114194604287224048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,6 +334,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114989532090299688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798249549377614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25fb778eb6ec0842a0114532f950c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114990171812209058
 MonoBehaviour:
   m_ObjectHideFlags: 1

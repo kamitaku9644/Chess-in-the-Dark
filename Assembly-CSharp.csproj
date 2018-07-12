@@ -63,10 +63,14 @@
     <Compile Include="Assets\Scripts\CameraController\RayController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\ArcherController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\BishopController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\BishopSearchController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\KingController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\KnightController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\KnightSearchController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\QueenController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\RookController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\RookSearchController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\SearchableController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\SwordmanController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InitializeController.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Assets\Scripts\PlayerController\MovableController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\MoveController.cs" />
     <Compile Include="Assets\Scripts\ScaleManager.cs" />
+    <Compile Include="Assets\Scripts\SearchController.cs" />
     <Compile Include="Assets\Scripts\SelectManager.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">

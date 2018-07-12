@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour {
 
     private static IntReactiveProperty _playerTurn = new IntReactiveProperty(1);
 
+    public static IntReactiveProperty PPlayerTurn
+    {
+        get { return _playerTurn; }
+    }
+
     public static int PlayerTurn{
         get { return _playerTurn.Value; }
         set { _playerTurn.Value = value; }

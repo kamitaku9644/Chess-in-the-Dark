@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SwordmanController : MovableController,IMovable {
 
+
+
+
     protected override void RowMovableSS()
     {
         int i;
@@ -63,6 +66,7 @@ public class SwordmanController : MovableController,IMovable {
         BaseMovableSS();
     }
     public bool Movable() { if (selectableList.Count == 0) { return false; } return true; }
+
     public void SSinit()
     {
         foreach (GameObject ss in selectableList)
