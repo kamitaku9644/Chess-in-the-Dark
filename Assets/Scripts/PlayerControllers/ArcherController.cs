@@ -22,5 +22,6 @@ public class ArcherController : MovableController,IMovable {
         {
             Destroy(ss);
         }
+        selectableList.Clear();
     }
 }

@@ -19,5 +19,6 @@ public class KnghtController : MovableController,IMovable {
         {
             Destroy(ss);
         }
+        selectableList.Clear();
     }
 }

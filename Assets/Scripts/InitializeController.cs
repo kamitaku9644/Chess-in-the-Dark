@@ -13,11 +13,13 @@ public class InitializeController : MonoBehaviour {
     [SerializeField] private GameObject rook;
     [SerializeField] private GameObject swordman;
 
-    
+   
+
     public void PlayerInit(GameObject player)
     {
         Transform parent = player.transform;
-
+        LayerController layerController = gameObject.AddComponent<LayerController>();
+        
         Instantiate(king, parent.transform.TransformPoint(0.5f, -0.25f, -5.5f), parent.rotation, parent);
         Instantiate(queen, parent.transform.TransformPoint(-0.5f, -0.25f, -5.5f), parent.rotation, parent);
         Instantiate(bishop, parent.transform.TransformPoint(1.5f, -0.25f, -5.5f), parent.rotation, parent);
@@ -41,6 +43,11 @@ public class InitializeController : MonoBehaviour {
             Instantiate(knight, parent.transform.TransformPoint(i, -0.25f, -5.5f), parent.rotation, parent);
         }
 
+        layerController.SetLayer(player,player);
+        Destroy(layerController);
     }
+
+   
+    
 
 }

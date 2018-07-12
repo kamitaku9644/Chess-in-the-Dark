@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114437571879320030}
   - component: {fileID: 114038507585894242}
   - component: {fileID: 114912204005180350}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 'Loading '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 224578781736535364}
   - component: {fileID: 222387629509314096}
   - component: {fileID: 114712403187185478}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

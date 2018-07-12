@@ -18,5 +18,6 @@ public class BishopController : MovableController,IMovable {
         {
             Destroy(ss);
         }
+        selectableList.Clear();
     }
 }

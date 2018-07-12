@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Load : MonoBehaviour,ILoading {
+public class LoadController: MonoBehaviour,ILoading {
 
     public float loadTimerate;
     

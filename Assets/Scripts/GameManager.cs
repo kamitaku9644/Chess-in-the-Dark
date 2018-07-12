@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour {
     InitializeController initializeController;
     ScaleManager scaleManager;
 
+   
+   
+
     // Use this for initialization
     void Start () {
 
@@ -132,6 +135,9 @@ public class GameManager : MonoBehaviour {
     {
         initializeController.PlayerInit(player1);
         initializeController.PlayerInit(player2);
+        
+
+        player1Camera.SetActive(true);
         GameState = GameState.select;
     }
 

@@ -20,6 +20,7 @@ public class KingController : MovableController,IMovable {
             Destroy(ss);
             
         }
+        selectableList.Clear();
     }
     
     

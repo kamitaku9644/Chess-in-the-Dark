@@ -65,7 +65,8 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InitializeController.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
-    <Compile Include="Assets\Scripts\Load.cs" />
+    <Compile Include="Assets\Scripts\LayerController.cs" />
+    <Compile Include="Assets\Scripts\LoadController.cs" />
     <Compile Include="Assets\Scripts\MovableController.cs" />
     <Compile Include="Assets\Scripts\MoveController.cs" />
     <Compile Include="Assets\Scripts\PlayerControllers\ArcherController.cs" />

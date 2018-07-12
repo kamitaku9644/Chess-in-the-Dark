@@ -28,7 +28,7 @@ public class MovableController : MonoBehaviour {
     protected readonly float[] queue = new float[12];
     protected readonly float[] row = new float[12];
 
-
+    LayerController layerController;
 
     protected void GetPlayerProperty(GameObject g, int b, int f, int r, int l, int d)
     {
@@ -73,7 +73,7 @@ public class MovableController : MonoBehaviour {
         QueueMovableSS();
         RowMovableSS();
         DiagonalMovableSS();
-       
+        
     }
 
 
@@ -82,7 +82,7 @@ public class MovableController : MonoBehaviour {
         var parent = playerName.transform;
         int i = nowSquareQueue;
         int ii = nowSquareRow;
-
+        
         if (0 <= i + 2 && i + 2 < 12)
         {
             if (0 <= ii + 1 && ii + 1 < 12)
@@ -215,6 +215,10 @@ public class MovableController : MonoBehaviour {
                 }
             }
         }
+
+        layerController = gameObject.AddComponent<LayerController>();
+        foreach(GameObject ss in selectableList) { layerController.SetLayer(parent.gameObject, ss); }
+        Destroy(layerController);
     }
 
 
@@ -268,6 +272,9 @@ public class MovableController : MonoBehaviour {
             }
 
         }
+        layerController = gameObject.AddComponent<LayerController>();
+        foreach (GameObject ss in selectableList) { layerController.SetLayer(parent.gameObject, ss); }
+        Destroy(layerController);
     }
 
 
@@ -318,6 +325,9 @@ public class MovableController : MonoBehaviour {
             }
 
         }
+        layerController = gameObject.AddComponent<LayerController>();
+        foreach (GameObject ss in selectableList) { layerController.SetLayer(parent.gameObject, ss); }
+        Destroy(layerController);
     }
 
     //斜め移動可能範囲
@@ -400,7 +410,9 @@ public class MovableController : MonoBehaviour {
                 if(opponentCheck == false) { break; }
             }
         }
-
+        layerController = gameObject.AddComponent<LayerController>();
+        foreach (GameObject ss in selectableList) { layerController.SetLayer(parent.gameObject, ss); }
+        Destroy(layerController);
     }
 
 

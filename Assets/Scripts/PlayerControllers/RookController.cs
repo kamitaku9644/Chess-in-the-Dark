@@ -19,5 +19,6 @@ public class RookController : MovableController,IMovable {
         {
             Destroy(ss);
         }
+        selectableList.Clear();
     }
 }

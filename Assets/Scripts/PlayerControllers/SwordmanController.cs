@@ -19,5 +19,6 @@ public class SwordmanController : MovableController,IMovable {
         {
             Destroy(ss);
         }
+        selectableList.Clear();
     }
 }
