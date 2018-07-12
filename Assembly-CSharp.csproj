@@ -59,24 +59,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DestroyController.cs" />
-    <Compile Include="Assets\Scripts\Destroyercontroller.cs" />
-    <Compile Include="Assets\Scripts\DiveMouseLook.cs" />
+    <Compile Include="Assets\Scripts\CameraController\DiveMouseLook.cs" />
+    <Compile Include="Assets\Scripts\CameraController\RayController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\ArcherController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\BishopController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\KingController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\KnightController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\QueenController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\RookController.cs" />
+    <Compile Include="Assets\Scripts\EachPlayerControllers\SwordmanController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InitializeController.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\LayerController.cs" />
     <Compile Include="Assets\Scripts\LoadController.cs" />
-    <Compile Include="Assets\Scripts\MovableController.cs" />
-    <Compile Include="Assets\Scripts\MoveController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\ArcherController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\BishopController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\KingController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\KnghtController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\QueenController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\RookController.cs" />
-    <Compile Include="Assets\Scripts\PlayerControllers\SwordmanController.cs" />
-    <Compile Include="Assets\Scripts\RayController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\DestroyController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\Destroyercontroller.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\MovableController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\MoveController.cs" />
     <Compile Include="Assets\Scripts\ScaleManager.cs" />
     <Compile Include="Assets\Scripts\SelectManager.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
