@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BishopSearchController : SearchableController {
 
-    public void Search()
+    public void Search(GameObject hittedSquare)
     {
-        GetPlayerProperty(this.gameObject, 1, 1, 1, 1, 1, 3);
-        GetQueue(selectedPlayer.transform.localPosition.z);
-        GetRow(selectedPlayer.transform.localPosition.x);
+        GetPlayerProperty(this.gameObject, hittedSquare, 1, 1, 1, 1, 1, 3);
+        GetQueue(hittedSquare.transform.localPosition.z);
+        GetRow(hittedSquare.transform.localPosition.x);
 
         BaseSearchable();
 

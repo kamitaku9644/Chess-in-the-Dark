@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RookSearchController : SearchableController{
 
-    public void Search()
+    public void Search(GameObject hittedSquare)
     {
-        GetPlayerProperty(this.gameObject, 0, 2, 2, 2, 2,3);
-        GetQueue(selectedPlayer.transform.localPosition.z);
-        GetRow(selectedPlayer.transform.localPosition.x);
+        GetPlayerProperty(this.gameObject,hittedSquare, 0, 2, 2, 2, 2,3);
+        GetQueue(hittedSquare.transform.localPosition.z);
+        GetRow(hittedSquare.transform.localPosition.x);
 
         BaseSearchable();
         

@@ -62,10 +62,10 @@ GameObject:
   - component: {fileID: 136474766065945818}
   - component: {fileID: 65570754590980878}
   - component: {fileID: 114530708000218660}
-  - component: {fileID: 114435426471645712}
   - component: {fileID: 54970065406696848}
   - component: {fileID: 114403888749457970}
   - component: {fileID: 114252350401832756}
+  - component: {fileID: 114879759652521132}
   m_Layer: 0
   m_Name: Rook
   m_TagString: Player
@@ -142,7 +142,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2048
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -271,17 +271,6 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
---- !u!114 &114435426471645712
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1843155898831644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f77e47c1c6cfc7f4cac82f1688723673, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114530708000218660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -372,6 +361,17 @@ MonoBehaviour:
   m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114879759652521132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843155898831644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb1cdc5fdc735d4e956b2668b48c117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124787751714533524
 Behaviour:
   m_ObjectHideFlags: 1

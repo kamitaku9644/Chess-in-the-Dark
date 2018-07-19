@@ -11,7 +11,7 @@ public class RookController : MovableController,IMovable {
         GetRow(selectedPlayer.transform.localPosition.x);
 
         BaseMovableSS();
-        this.GetComponent<RookSearchController>().Search();
+      
     }
     public bool Movable() { if (selectableList.Count == 0) { return false; } return true; }
     public void SSinit()

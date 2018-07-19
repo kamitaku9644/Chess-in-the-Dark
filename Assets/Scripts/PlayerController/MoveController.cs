@@ -12,7 +12,7 @@ public class MoveController : MonoBehaviour,IMove {
 
     Vector3 movePosition;
 
-    public void MoveRdy(GameObject hittedSquare)
+    public virtual void MoveRdy(GameObject hittedSquare)
     {
         this.GetComponent<IMovable>().SSinit();
         playerCamera = this.gameObject.transform.GetChild(1).gameObject;
