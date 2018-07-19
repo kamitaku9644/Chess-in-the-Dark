@@ -79,12 +79,14 @@
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\LayerController.cs" />
     <Compile Include="Assets\Scripts\LoadController.cs" />
+    <Compile Include="Assets\Scripts\PlayerChecker.cs" />
     <Compile Include="Assets\Scripts\PlayerController\DestroyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\Destroyercontroller.cs" />
     <Compile Include="Assets\Scripts\PlayerController\MovableController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\MoveController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\SearchableController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\SearchController.cs" />
+    <Compile Include="Assets\Scripts\ResultManager.cs" />
     <Compile Include="Assets\Scripts\ScaleManager.cs" />
     <Compile Include="Assets\Scripts\SelectManager.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />

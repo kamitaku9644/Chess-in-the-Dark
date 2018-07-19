@@ -39,7 +39,15 @@ public class GameManager : MonoBehaviour {
     }
 
     [SerializeField] private GameObject player1;
+    public GameObject Player1
+    {
+        get { return player1; }
+    }
     [SerializeField] private GameObject player2;
+    public GameObject Player2
+    {
+        get { return player2; }
+    }
     [SerializeField] private GameObject player1Camera;
     [SerializeField] private GameObject player2Camera;
     
@@ -72,7 +80,8 @@ public class GameManager : MonoBehaviour {
                 _disposables.Clear();
                 print(state);
                 GameStateChanged(state);
-            });
+            })
+            .AddTo(this);
 
         _playerTurn            
             .Subscribe(turn =>
@@ -87,7 +96,8 @@ public class GameManager : MonoBehaviour {
                     player2Camera.SetActive(true);
 
                 }
-            });
+            })
+            .AddTo(this);
 
 	}
 

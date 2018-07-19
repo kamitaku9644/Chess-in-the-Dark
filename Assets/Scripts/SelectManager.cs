@@ -27,7 +27,8 @@ public class SelectManager : MonoBehaviour{
 
         this.UpdateAsObservable()
             .Where(_ => GameManager.GameState == GameState.select && Selecting == true)
-            .Subscribe(_ => rayController.PlayerSelect());
+            .Subscribe(_ => rayController.PlayerSelect())
+            .AddTo(this);
             
 
 
@@ -47,6 +48,7 @@ public class SelectManager : MonoBehaviour{
                     
                 }
                 GameManager.GameState = GameState.interval;
-            });
+            })
+            .AddTo(this);
     }
 }

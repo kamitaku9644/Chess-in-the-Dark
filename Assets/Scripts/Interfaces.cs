@@ -49,3 +49,10 @@ public enum GameState
     interval,
     result
 }
+
+enum Result
+{
+    player1win,
+    player1lose,
+    draw
+}
