@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
     TimeManager timeManager;
     InitializeController initializeController;
     ScaleManager scaleManager;
+    PlayerChecker playerChecker;
 
    
    
@@ -69,9 +70,10 @@ public class GameManager : MonoBehaviour {
     void Start () {
 
         
-        timeManager = this.GetComponentInChildren<TimeManager>();
-        initializeController = this.GetComponentInChildren<InitializeController>();
-        scaleManager = this.GetComponentInChildren<ScaleManager>();
+        timeManager = this.GetComponent<TimeManager>();
+        initializeController = this.GetComponent<InitializeController>();
+        scaleManager = this.GetComponent<ScaleManager>();
+        playerChecker = this.GetComponent<PlayerChecker>();
 
 
         _gameState
@@ -150,8 +152,8 @@ public class GameManager : MonoBehaviour {
     {
         initializeController.PlayerInit(player1);
         initializeController.PlayerInit(player2);
-        
 
+        playerChecker.PlayerCheck();
         player1Camera.SetActive(true);
         GameState = GameState.select;
     }
@@ -172,6 +174,24 @@ public class GameManager : MonoBehaviour {
         GameState = GameState.select;
     }
 
+
+    private void Select()
+    {
+        timeManager.CountSet(10);
+
+        this.LateUpdateAsObservable()
+            .Where(_ => SelectManager.Selecting == true)
+           .Subscribe(_ =>
+           {
+               timeManager.CountTime();
+           })
+           .AddTo(Disposables);
+
+
+    }
+
+
+
     private void Moverdy()
     { 
 
@@ -186,21 +206,6 @@ public class GameManager : MonoBehaviour {
         GameState = GameState.move;
     }
 
-
-    private void Select()
-    {
-        timeManager.CountSet(10);
-        
-        this.LateUpdateAsObservable()
-            .Where(_ => SelectManager.Selecting == true)
-           .Subscribe(_ =>
-           {
-               timeManager.CountTime();
-           })
-           .AddTo(Disposables);
-        
-
-    }
 
     private void Move()
     {

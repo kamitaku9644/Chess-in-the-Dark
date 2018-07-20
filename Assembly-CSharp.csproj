@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\EachPlayerControllers\RookMoveController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\RookSearchController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\SwordmanController.cs" />
+    <Compile Include="Assets\Scripts\ExsistPlayerPresenter.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InitializeController.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />

@@ -24,22 +24,22 @@ public class ResultManager : MonoBehaviour {
         int knightCount = 0;
         GameObject king = null;
 
-        foreach (GameObject p in playerChecker.ExsistPlayer1)
+        foreach (Transform p in playerChecker.ExsistPlayer1)
         {
             if (p.name == "King")
             {
                 kingCount++;
-                king = p;
+                king = p.gameObject;
             }
             if (p.name == "Bishop") { bishopCount++; }
             if (p.name == "Knight") { knightCount++; }
         }
-        foreach (GameObject p in playerChecker.ExsistPlayer2)
+        foreach (Transform p in playerChecker.ExsistPlayer2)
         {
             if (p.name == "King")
             {
                 kingCount++;
-                king = p;
+                king = p.gameObject;
             }
             if (p.name == "Bishop") { bishopCount++; }
             if (p.name == "Knight") { knightCount++; }
