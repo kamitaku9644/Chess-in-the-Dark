@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController\DiveMouseLook.cs" />
     <Compile Include="Assets\Scripts\CameraController\RayController.cs" />
+    <Compile Include="Assets\Scripts\CameraController\StartController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\ArcherController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\BishopController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\BishopMoveController.cs" />
