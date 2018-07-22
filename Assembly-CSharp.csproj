@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController\DiveMouseLook.cs" />
     <Compile Include="Assets\Scripts\CameraController\RayController.cs" />
+    <Compile Include="Assets\Scripts\CameraController\SelectManager.cs" />
     <Compile Include="Assets\Scripts\CameraController\StartController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\ArcherController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\BishopController.cs" />
@@ -75,13 +76,12 @@
     <Compile Include="Assets\Scripts\EachPlayerControllers\RookMoveController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\RookSearchController.cs" />
     <Compile Include="Assets\Scripts\EachPlayerControllers\SwordmanController.cs" />
-    <Compile Include="Assets\Scripts\ExsistPlayerPresenter.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\InitializeController.cs" />
+    <Compile Include="Assets\Scripts\GameManagers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameManagers\InitializeController.cs" />
+    <Compile Include="Assets\Scripts\GameManagers\ScaleManager.cs" />
+    <Compile Include="Assets\Scripts\GameManagers\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Scripts\LayerController.cs" />
-    <Compile Include="Assets\Scripts\LoadController.cs" />
-    <Compile Include="Assets\Scripts\PlayerChecker.cs" />
     <Compile Include="Assets\Scripts\PlayerController\DestroyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\Destroyercontroller.cs" />
     <Compile Include="Assets\Scripts\PlayerController\MovableController.cs" />
@@ -89,10 +89,11 @@
     <Compile Include="Assets\Scripts\PlayerController\SearchableController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\SearchController.cs" />
     <Compile Include="Assets\Scripts\ResignController.cs" />
+    <Compile Include="Assets\Scripts\ResultController.cs" />
     <Compile Include="Assets\Scripts\ResultManager.cs" />
-    <Compile Include="Assets\Scripts\ScaleManager.cs" />
-    <Compile Include="Assets\Scripts\SelectManager.cs" />
-    <Compile Include="Assets\Scripts\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\UIController\ExsistPlayerPresenter.cs" />
+    <Compile Include="Assets\Scripts\UIController\LoadController.cs" />
+    <Compile Include="Assets\Scripts\UIController\PlayerChecker.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kamit/Desktop/unity-projects/ChessinTheDark/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
