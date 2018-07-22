@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
         set { moveComp = value; }
     }
 
-    private static IntReactiveProperty _playerTurn = new IntReactiveProperty(1);
+    private static IntReactiveProperty _playerTurn;
 
     public static IntReactiveProperty PPlayerTurn
     {
@@ -57,11 +57,15 @@ public class GameManager : MonoBehaviour {
     {
         get { return _disposables; }
     }
-    
+
+    private GameObject activeCamera;
+
+
     TimeManager timeManager;
     InitializeController initializeController;
     ScaleManager scaleManager;
     PlayerChecker playerChecker;
+    ResignController resignController;
 
    
    
@@ -74,7 +78,9 @@ public class GameManager : MonoBehaviour {
         initializeController = this.GetComponent<InitializeController>();
         scaleManager = this.GetComponent<ScaleManager>();
         playerChecker = this.GetComponent<PlayerChecker>();
+        resignController = this.GetComponent<ResignController>();
 
+        activeCamera = player1Camera;
 
         _gameState
             .Subscribe(state =>
@@ -92,11 +98,14 @@ public class GameManager : MonoBehaviour {
                 if(turn == 1) {
                     player1Camera.SetActive(true);
                     player2Camera.SetActive(false);
+
+                    activeCamera = player1Camera;
                 }
                 else if(turn == 2) {
                     player1Camera.SetActive(false);
                     player2Camera.SetActive(true);
 
+                    activeCamera = player2Camera;
                 }
             })
             .AddTo(this);
@@ -113,6 +122,7 @@ public class GameManager : MonoBehaviour {
             case GameState.initialize:
 
                 Initialize();
+                
 
                 break;
             case GameState.selectrdy:
@@ -153,7 +163,7 @@ public class GameManager : MonoBehaviour {
         initializeController.PlayerInit(player1);
         initializeController.PlayerInit(player2);
 
-        playerChecker.PlayerCheck();
+        _playerTurn = new IntReactiveProperty(1);
         player1Camera.SetActive(true);
         GameState = GameState.select;
     }
@@ -184,6 +194,7 @@ public class GameManager : MonoBehaviour {
            .Subscribe(_ =>
            {
                timeManager.CountTime();
+               resignController.Resign(activeCamera);
            })
            .AddTo(Disposables);
 

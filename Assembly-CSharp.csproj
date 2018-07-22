@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\PlayerController\MoveController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\SearchableController.cs" />
     <Compile Include="Assets\Scripts\PlayerController\SearchController.cs" />
+    <Compile Include="Assets\Scripts\ResignController.cs" />
     <Compile Include="Assets\Scripts\ResultManager.cs" />
     <Compile Include="Assets\Scripts\ScaleManager.cs" />
     <Compile Include="Assets\Scripts\SelectManager.cs" />

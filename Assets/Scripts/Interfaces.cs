@@ -50,7 +50,7 @@ public enum GameState
     result
 }
 
-enum Result
+public enum Result
 {
     player1win,
     player1lose,

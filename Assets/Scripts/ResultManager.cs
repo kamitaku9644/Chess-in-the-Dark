@@ -4,7 +4,12 @@ using UnityEngine;
 using UniRx;
 
 public class ResultManager : MonoBehaviour {
-    Result result;
+    private static Result _result;
+    public static Result PResult
+    {
+        get { return _result; }
+        set { _result = value; }
+    }
     PlayerChecker playerChecker;
 
     private void Start()
@@ -48,13 +53,13 @@ public class ResultManager : MonoBehaviour {
         //終了分岐
         if(kingCount == 2)
         {
-            if (bishopCount == 1) { result = Result.draw; }
-            else if (knightCount == 1) { result = Result.draw; }
+            if (bishopCount == 1) { PResult = Result.draw; }
+            else if (knightCount == 1) { PResult = Result.draw; }
         }
         else if (kingCount == 1)
         {
-            if (king.transform.parent.name == "Player1") { result = Result.player1win; }
-            else { result = Result.player1lose; }
+            if (king.transform.parent.name == "Player1") { PResult = Result.player1win; }
+            else { PResult = Result.player1lose; }
         }
         
     }
